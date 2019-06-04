@@ -1,3 +1,14 @@
+### Sass ###
+.sass-cache/
+.scss-cache/
+*.css.map
+*.sass.map
+*.scss.map
+*.css
+
+## System ##
+.DS_Store
+
 # dependencies
 node_modules/
 
