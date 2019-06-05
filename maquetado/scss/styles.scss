@@ -1,32 +1,56 @@
 .bold {
-    font-weight: bold;
+  font-weight: bold;
+}
+
+.book-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.book-cover {
+  width: 261px;
+  height: 368px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin-left: 100px;
 }
 
 .book-title {
-    font-size: 32px;
-    margin-bottom: 20px;
-    margin-top: 10px;
+  font-size: 32px;
+  margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 .book-gender {
-    color: $gray;
-    font-size: 24px;
-    margin-left: 4px;
+  color: $gray;
+  font-size: 24px;
+  margin-left: 4px;
 }
 
 .book-property {
-    font-size: 20px;
-    margin-bottom: 20px;
-    margin-left: 4px;
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-left: 4px;
 }
 
 .height {
-    line-height: 24px;
+  line-height: 24px;
 }
 
 .property-description {
-    color: $gray;
-    font-size: 20px;
-    margin-bottom: 20px;
-    margin-left: 4px;
+  color: $gray;
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-left: 4px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
 }
