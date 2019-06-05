@@ -1,3 +1,32 @@
-.title {
-  color: red;
+.bold {
+    font-weight: bold;
+}
+
+.book-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.book-gender {
+    color: $gray;
+    font-size: 24px;
+    margin-left: 4px;
+}
+
+.book-property {
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-left: 4px;
+}
+
+.height {
+    line-height: 24px;
+}
+
+.property-description {
+    color: $gray;
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-left: 4px;
 }
