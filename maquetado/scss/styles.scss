@@ -13,6 +13,16 @@
   height: 368px;
   width: 261px;
   margin-right: 40px;
+  position: relative;
+}
+
+.book-badge {
+  position: absolute;
+  height: 100px;
+  width: 80px;
+  left: 226px;
+  transform: rotate(15deg);
+  top: 8px;
 }
 
 .book-detail-value {
