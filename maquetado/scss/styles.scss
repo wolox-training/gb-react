@@ -2,20 +2,15 @@
   font-weight: bold;
 }
 
-.book-cover {
-  height: 368px;
-  width: 261px;
-  margin-right: 40px;
-}
-
 .book-container {
   display: flex;
   padding: 10px;
 }
 
-.book-title {
-  font-size: 32px;
-  margin: 20px 0 40px;
+.book-cover {
+  height: 368px;
+  width: 261px;
+  margin-right: 40px;
 }
 
 .book-detail-value {
@@ -24,23 +19,35 @@
   margin-bottom: 20px;
 }
 
-.book-gender {
-  color: $gray;
-  font-size: 24px;
-  margin-right: 4px;
-}
-
 .book-detail-name {
   font-size: 20px;
   margin-bottom: 20px;
   margin-right: 4px;
 }
 
+.book-gender {
+  color: $gray;
+  font-size: 24px;
+  margin-right: 4px;
+}
+
+.book-info-container {
+  flex-grow: 1;
+  margin-right: 100px;
+}
+
+.book-row-info-container {
+  align-items: baseline;
+}
+
+.book-title {
+  font-size: 32px;
+  margin: 20px 0 40px;
+}
+
 .column {
   display: flex;
   flex-direction: column;
-  width: 400px;
-  margin-right: 100px;
 }
 
 .height {
@@ -50,5 +57,4 @@
 .row {
   display: flex;
   flex-direction: row;
-  align-items: baseline;
 }
