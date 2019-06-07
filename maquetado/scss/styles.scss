@@ -1,3 +1,36 @@
-.title {
-  color: red;
+.bold {
+  font-weight: bold;
+}
+
+.book-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.book-title {
+  font-size: 32px;
+  margin: 20px 0 40px;
+}
+
+.book-gender {
+  color: $gray;
+  font-size: 24px;
+  margin-right: 4px;
+}
+
+.book-detail-name {
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-right: 4px;
+}
+
+.height {
+  line-height: 24px;
+}
+
+.book-detail-value {
+  color: $gray;
+  font-size: 20px;
+  margin-bottom: 20px;
 }
