@@ -2,51 +2,49 @@
   font-weight: bold;
 }
 
-.book-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+.book-cover {
+  height: 368px;
+  width: 261px;
+  margin-right: 40px;
 }
 
-.book-cover {
-  width: 261px;
-  height: 368px;
+.book-container {
+  display: flex;
+  padding: 10px;
+}
+
+.book-title {
+  font-size: 32px;
+  margin: 20px 0 40px;
+}
+
+.book-detail-value {
+  color: $gray;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.book-gender {
+  color: $gray;
+  font-size: 24px;
+  margin-right: 4px;
+}
+
+.book-detail-name {
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-right: 4px;
 }
 
 .column {
   display: flex;
   flex-direction: column;
   width: 400px;
-  margin-left: 100px;
-}
-
-.book-title {
-  font-size: 32px;
-  margin-bottom: 20px;
-  margin-top: 10px;
-}
-
-.book-gender {
-  color: $gray;
-  font-size: 24px;
-  margin-left: 4px;
-}
-
-.book-property {
-  font-size: 20px;
-  margin-bottom: 20px;
-  margin-left: 4px;
+  margin-right: 100px;
 }
 
 .height {
   line-height: 24px;
-}
-
-.property-description {
-  color: $gray;
-  font-size: 20px;
-  margin-bottom: 20px;
-  margin-left: 4px;
 }
 
 .row {
