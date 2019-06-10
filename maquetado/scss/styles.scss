@@ -8,16 +8,6 @@
   max-width: 1000px;
   padding: 20px;
   width: 100%;
-}
-
-.book-cover {
-  display: block;
-  height: 360px;
-  margin-right: 40px;
-  position: relative;
-}
-
-.book-badge {
   &::after {
     content: '';
     background: url('./assets/book-badge.png') no-repeat center/contain;
@@ -28,6 +18,13 @@
     transform: rotate(15deg);
     width: 80px;
   }
+}
+
+.book-cover {
+  display: block;
+  height: 360px;
+  margin-right: 40px;
+  position: relative;
 }
 
 .book-detail-value {
