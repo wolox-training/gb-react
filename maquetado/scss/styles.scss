@@ -11,9 +11,11 @@
 }
 
 .book-cover {
-  height: 368px;
+  height: 100%;
+  max-width: 380px;
   margin-right: 40px;
-  width: 261px;
+  width: 100%;
+  max-width: 260px;
 }
 
 .book-detail-value {
