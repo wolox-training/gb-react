@@ -3,10 +3,11 @@
 }
 
 .book-container {
+  background-color: $white;
+  box-shadow: 4px 4px 10px 0 $black-05;
+  max-width: 1000px;
   padding: 20px;
-  background-color: #FFF;
-  box-shadow: 4px 4px 10px 0 $shadow-background;
-  width: 1000px;
+  width: 100%;
 }
 
 .big-container {
@@ -49,19 +50,18 @@
 }
 
 .book-cover {
-  height: 368px;
-  width: 261px;
+  height: calc(100% - 360px);
   margin-right: 40px;
   position: relative;
 }
 
 .book-badge {
-  position: absolute;
   height: 100px;
-  width: 80px;
-  left: 226px;
-  transform: rotate(15deg);
+  left: calc(100% - 250px);
+  position: absolute;
   top: 8px;
+  transform: rotate(15deg);
+  width: 261px;
 }
 
 .detail-color {
@@ -91,15 +91,15 @@
 
 .book-title-container {
   align-items: baseline;
-  position: relative;
   margin-bottom: 40px;
+  position: relative;
   &::after {
-    content:"";
-    width: 100%;
-    height: 4px;
-    position: absolute;
+    content:'';
     border-bottom: 4px solid $earls-green;
     bottom: 20px;
+    height: 4px;
+    position: absolute;
+    width: 100%;
   }
 }
 
@@ -119,5 +119,4 @@
 
 .row {
   display: flex;
-  flex-direction: row;
 }
