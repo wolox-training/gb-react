@@ -10,19 +10,29 @@
   width: 100%;
 }
 
-.book-cover {
-  height: calc(100% - 360px);
-  margin-right: 40px;
+.book-cover-container {
+  display: block;
   position: relative;
 }
 
+.book-cover {
+  height: 360px;
+  margin-right: 40px;
+}
+
 .book-badge {
-  height: 100px;
-  left: calc(100% - 250px);
-  position: absolute;
-  top: 8px;
-  transform: rotate(15deg);
-  width: 261px;
+  &::after {
+    content: '';
+    background-image: url('./assets/book-badge.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100px;
+    left: 220px;
+    position: absolute;
+    top: 0;
+    transform: rotate(15deg);
+    width: 80px;
+  }
 }
 
 .book-detail-value {
