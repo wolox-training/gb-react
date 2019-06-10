@@ -11,11 +11,11 @@
 }
 
 .book-cover-container {
-  display: block;
-  position: relative;
 }
 
 .book-cover {
+  display: block;
+  position: relative;
   height: 360px;
   margin-right: 40px;
 }
@@ -23,9 +23,7 @@
 .book-badge {
   &::after {
     content: '';
-    background-image: url('./assets/book-badge.png');
-    background-size: contain;
-    background-repeat: no-repeat;
+    background: url('./assets/book-badge.png') no-repeat center/contain;
     height: 100px;
     left: 220px;
     position: absolute;
