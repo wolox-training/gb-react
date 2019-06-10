@@ -11,7 +11,7 @@
 }
 
 .book-cover {
-  height: 368px;
+  height: calc(100% - 360px);
   margin-right: 40px;
   position: relative;
 }
