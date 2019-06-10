@@ -3,16 +3,17 @@
 }
 
 .book-container {
+  background-color: $white;
+  box-shadow: 4px 4px 10px 0 $black-05;
+  max-width: 1000px;
   padding: 20px;
-  background-color: #FFF;
-  box-shadow: 4px 4px 10px 0 $shadow-background;
-  width: 1000px;
+  width: 100%;
 }
 
 .book-cover {
   height: 368px;
-  width: 261px;
   margin-right: 40px;
+  width: 261px;
 }
 
 .book-detail-value {
@@ -40,15 +41,15 @@
 
 .book-title-container {
   align-items: baseline;
-  position: relative;
   margin-bottom: 40px;
+  position: relative;
   &::after {
-    content:"";
-    width: 100%;
-    height: 4px;
-    position: absolute;
+    content:'';
     border-bottom: 4px solid $earls-green;
     bottom: 20px;
+    height: 4px;
+    position: absolute;
+    width: 100%;
   }
 }
 
