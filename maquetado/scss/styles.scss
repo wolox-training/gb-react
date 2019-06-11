@@ -15,16 +15,16 @@
 }
 
 .books-list {
+  align-content: center;
   display: flex;
   flex-wrap: wrap;
-  align-content: center;
 }
 
 .book-preview {
   margin: 10px;
   padding: 30px 30px;
   background-color: $white;
-  box-shadow: 5px 10px $black-05;
+  box-shadow: 4px 4px 10px 0 $black-05;
   height: 300px;
   width: 200px;
 }
