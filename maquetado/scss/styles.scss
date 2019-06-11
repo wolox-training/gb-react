@@ -68,8 +68,11 @@
   }
 }
 
-.detail-color {
-  color: $gray;
+.book-cover {
+  display: block;
+  height: 360px;
+  margin-right: 40px;
+  position: relative;
 }
 
 .book-detail-value {
@@ -115,6 +118,10 @@
 .column {
   display: flex;
   flex-direction: column;
+}
+
+.detail-color {
+  color: $gray;
 }
 
 .height {
