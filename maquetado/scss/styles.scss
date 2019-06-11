@@ -2,7 +2,14 @@
   font-weight: bold;
 }
 
-.book-badge {
+.book-container {
+  display: flex;
+  background-color: #FFF;
+  box-shadow: 4px 4px 10px 0 $black-05;
+  max-width: 1000px;
+  padding: 20px;
+  position: relative;
+  width: 100%;
   &::after {
     content: '';
     background: url('./assets/book-badge.png') no-repeat center/contain;
@@ -13,16 +20,6 @@
     transform: rotate(15deg);
     width: 80px;
   }
-}
-
-.book-container {
-  display: flex;
-  background-color: #FFF;
-  box-shadow: 4px 4px 10px 0 $black-05;
-  max-width: 1000px;
-  padding: 20px;
-  position: relative;
-  width: 100%;
 }
 
 .book-cover {
