@@ -16,10 +16,12 @@
 }
 
 .book-container {
-  background-color: $white;
+  display: flex;
+  background-color: #FFF;
   box-shadow: 4px 4px 10px 0 $black-05;
   max-width: 1000px;
   padding: 20px;
+  position: relative;
   width: 100%;
 }
 
@@ -85,7 +87,7 @@
   align-items: baseline;
   margin-bottom: 40px;
   position: relative;
-  &::after {
+  &::before {
     content:'';
     border-bottom: 4px solid $earls-green;
     bottom: 20px;
