@@ -53,21 +53,20 @@
 
 .books-list {
   align-content: center;
+  background-color: $wild-sand;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  background-color: $wild-sand;
+  margin: 0 100px;
 }
 
 .book-preview {
-  margin: 10px;
-  padding: 30px 30px;
   background-color: $white;
   box-shadow: 4px 4px 10px 0 $black-05;
   height: 300px;
+  margin: 20px;
+  padding: 30px 30px;
   width: 200px;
 }
-
 .book-preview-info {
   margin-top: 10px;
 }
