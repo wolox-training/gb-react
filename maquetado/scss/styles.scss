@@ -4,9 +4,10 @@
 
 .book-container {
   display: flex;
-  background-color: #FFF;
+  background-color: $white;
   box-shadow: 4px 4px 10px 0 $black-05;
   max-width: 1000px;
+  margin: 0 auto;
   padding: 20px;
   position: relative;
   width: 100%;
@@ -106,6 +107,11 @@
   flex-direction: column;
 }
 
+.detail-container {
+  background-color: $wild-sand;
+  padding: 0 60px;
+}
+
 .detail-color {
   color: $gray;
 }
@@ -134,4 +140,17 @@
   height: 70px;
   width: 210px;
   margin-left: 220px;
+}
+
+.redirect-arrow {
+  position: relative;
+  &::before {
+    content: '';
+    background: url(./assets/back-arrow.png) no-repeat;
+    height: 40px;
+    margin-left: -30px;
+    position: absolute;
+    width: 100%;
+    left: 0px;
+  }
 }
