@@ -55,11 +55,12 @@
   align-content: center;
   display: flex;
   flex-wrap: wrap;
+  padding: 120px;
 }
 
 .books-list-container {
   justify-content: space-between;
-  padding: 160px;
+  background-color: $wild-sand;
 }
 
 .book-preview {
@@ -110,4 +111,26 @@
 
 .height {
   line-height: 24px;
+}
+
+.navbar {
+  background-color: $white;
+  box-shadow: 0 4px 10px 0 $black-05;
+  height: 70px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  &::before {
+    content:'';
+    border-top: 4px solid $cerulean;
+    height: 4px;
+    position: absolute;
+    width: 100%;
+  }
+}
+
+.navbar-logo {
+  height: 70px;
+  width: 210px;
+  margin-left: 120px;
 }
