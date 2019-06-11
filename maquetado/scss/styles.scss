@@ -2,6 +2,19 @@
   font-weight: bold;
 }
 
+.book-badge {
+  &::after {
+    content: '';
+    background: url('./assets/book-badge.png') no-repeat center/contain;
+    height: 100px;
+    left: 220px;
+    position: absolute;
+    top: 0;
+    transform: rotate(15deg);
+    width: 80px;
+  }
+}
+
 .book-container {
   background-color: $white;
   box-shadow: 4px 4px 10px 0 $black-05;
@@ -10,14 +23,43 @@
   width: 100%;
 }
 
-.books-list-container {
-  padding: 60px;
+.book-cover {
+  display: block;
+  height: 360px;
+  margin-right: 40px;
+  position: relative;
+}
+
+.book-detail-name {
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-right: 4px;
+}
+
+.book-detail-value {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.book-gender {
+  font-size: 24px;
+  margin-right: 4px;
+}
+
+.book-info-container {
+  flex-grow: 1;
+  margin-right: 100px;
 }
 
 .books-list {
   align-content: center;
   display: flex;
   flex-wrap: wrap;
+}
+
+.books-list-container {
+  justify-content: space-between;
+  padding: 160px;
 }
 
 .book-preview {
@@ -33,63 +75,14 @@
   margin-top: 10px;
 }
 
-.books-list-container {
-  display: flex;
-  justify-content: space-between;
-  padding: 60px;
-}
-
 .book-small-preview {
   height: 200px;
   width: 140px;
 }
 
-.book-cover {
-  display: block;
-  position: relative;
-  height: 360px;
-  margin-right: 40px;
-}
-
-.book-badge {
-  &::after {
-    content: '';
-    background: url('./assets/book-badge.png') no-repeat center/contain;
-    height: 100px;
-    left: 220px;
-    position: absolute;
-    top: 0;
-    transform: rotate(15deg);
-    width: 80px;
-  }
-}
-
-.book-cover {
-  display: block;
-  height: 360px;
-  margin-right: 40px;
-  position: relative;
-}
-
-.book-detail-value {
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-
-.book-detail-name {
-  font-size: 20px;
-  margin-bottom: 20px;
-  margin-right: 4px;
-}
-
-.book-gender {
-  font-size: 24px;
-  margin-right: 4px;
-}
-
-.book-info-container {
-  flex-grow: 1;
-  margin-right: 100px;
+.book-title {
+  font-size: 32px;
+  margin: 20px 0 40px;
 }
 
 .book-title-container {
@@ -106,11 +99,6 @@
   }
 }
 
-.book-title {
-  font-size: 32px;
-  margin: 20px 0 40px;
-}
-
 .column {
   display: flex;
   flex-direction: column;
@@ -122,8 +110,4 @@
 
 .height {
   line-height: 24px;
-}
-
-.row {
-  display: flex;
 }
