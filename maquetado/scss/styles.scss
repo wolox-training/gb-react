@@ -54,7 +54,7 @@
 .books-list {
   align-content: center;
   background-color: $wild-sand;
-  display: flex; 
+  display: flex;
   flex-wrap: wrap;
   padding: 120px;
   margin: 0 100px;
@@ -106,7 +106,7 @@
   flex-direction: column;
 }
 
-.detail-container {
+.body-detail {
   background-color: $wild-sand;
   height: 100vh;
   padding: 40px 60px;
@@ -145,13 +145,13 @@
 
 .redirect-arrow {
   font-size: 20px;
-  margin-left: 200px;
+  margin-left: 100px;
   position: relative;
   &::before {
     content: '';
     background: url(./assets/back-arrow.png) no-repeat;
     height: 40px;
-    margin-left: -30px;
+    margin-left: -40px;
     position: absolute;
     width: 100%;
     left: 0px;
