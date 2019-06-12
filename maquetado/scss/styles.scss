@@ -131,6 +131,11 @@
 }
 
 .login-container {
+  display: flex;
+  justify-content: center;
+}
+
+.info-container {
   background-color: $wild-sand;
   height: 400px;
   justify-content: space-between;
