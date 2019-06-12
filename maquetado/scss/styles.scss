@@ -133,11 +133,17 @@
 .login-container {
   display: flex;
   justify-content: center;
+  height: 420px;
+}
+
+.signup-container {
+  display: flex;
+  justify-content: center;
+  height: 600px;
 }
 
 .info-container {
   background-color: $wild-sand;
-  height: 400px;
   justify-content: space-between;
   max-width: 300px;
   padding: 25px 25px 15px;
@@ -198,7 +204,7 @@
   width: 210px;
 }
 
-.login-detail {
+.confirmation-detail {
   background-color: $earls-green;
   border-radius: 5px;
   height: 30px;
@@ -216,16 +222,16 @@
   }
 }
 
-.login-detail-font {
+.confirmation-detail-font {
   background-color: $earls-green;
   color: $white;
   font-size: 16px;
   line-height: 20px;
   margin: 5px;
-  width: 50px;
+  width: 55px;
 }
 
-.sign-up-detail {
+.back-detail {
   background-color: $wild-sand;
   border: 2px solid $earls-green;
   border-radius: 5px;
@@ -236,7 +242,7 @@
   width: 250px;
 }
 
-.sign-up-detail-font {
+.back-detail-font {
   color: $earls-green;
   font-size: 16px;
   line-height: 24px;
