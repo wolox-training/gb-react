@@ -59,8 +59,7 @@
   margin: 0 100px;
 }
 
-.books-list-container {
-  justify-content: space-between;
+.books-list-background {
   background-color: $wild-sand;
 }
 
@@ -118,13 +117,15 @@
   background-color: $white;
   box-shadow: 0 4px 10px 0 $black-05;
   height: 70px;
-  position: sticky;
+  padding-left: 200px;
+  position: fixed;
   top: 0;
   width: 100%;
   &::before {
     content:'';
     border-top: 4px solid $cerulean;
     height: 4px;
+    left: 0;
     position: absolute;
     width: 100%;
   }
@@ -133,5 +134,4 @@
 .navbar-logo {
   height: 70px;
   width: 210px;
-  margin-left: 220px;
 }
