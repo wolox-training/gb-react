@@ -3,20 +3,30 @@
 }
 
 .book-container {
-  padding: 10px;
+  display: flex;
+  background-color: #FFF;
+  box-shadow: 4px 4px 10px 0 $black-05;
+  max-width: 1000px;
+  padding: 20px;
+  position: relative;
+  width: 100%;
+  &::after {
+    content: '';
+    background: url('./assets/book-badge.png') no-repeat center/contain;
+    height: 100px;
+    left: 220px;
+    position: absolute;
+    top: 0;
+    transform: rotate(15deg);
+    width: 80px;
+  }
 }
 
 .book-cover {
-  height: 380px;
+  display: block;
+  height: 360px;
   margin-right: 40px;
-  max-width: 260px;
-  width: 100%;
-}
-
-.book-detail-value {
-  color: $gray;
-  font-size: 20px;
-  margin-bottom: 20px;
+  position: relative;
 }
 
 .book-detail-name {
@@ -25,8 +35,12 @@
   margin-right: 4px;
 }
 
+.book-detail-value {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
 .book-gender {
-  color: $gray;
   font-size: 24px;
   margin-right: 4px;
 }
@@ -36,13 +50,23 @@
   margin-right: 100px;
 }
 
-.book-title-info-container {
-  align-items: baseline;
-}
-
 .book-title {
   font-size: 32px;
   margin: 20px 0 40px;
+}
+
+.book-title-container {
+  align-items: baseline;
+  margin-bottom: 40px;
+  position: relative;
+  &::before {
+    content:'';
+    border-bottom: 4px solid $earls-green;
+    bottom: 20px;
+    height: 4px;
+    position: absolute;
+    width: 100%;
+  }
 }
 
 .column {
@@ -50,10 +74,10 @@
   flex-direction: column;
 }
 
-.height {
-  line-height: 24px;
+.detail-color {
+  color: $gray;
 }
 
-.row {
-  display: flex;
+.height {
+  line-height: 24px;
 }
