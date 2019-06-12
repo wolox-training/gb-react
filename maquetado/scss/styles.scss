@@ -1,3 +1,12 @@
+.body-detail {
+  height: 100vh;
+  padding: 40px 60px;
+}
+
+.body-background {
+  background-color: $wild-sand;
+}
+
 .bold {
   font-weight: bold;
 }
@@ -60,10 +69,6 @@
   margin: 0 100px;
 }
 
-.books-list-background {
-  background-color: $wild-sand;
-}
-
 .book-preview {
   background-color: $white;
   box-shadow: 4px 4px 10px 0 $black-05;
@@ -106,18 +111,42 @@
   flex-direction: column;
 }
 
-.body-detail {
-  background-color: $wild-sand;
-  height: 100vh;
-  padding: 40px 60px;
-}
-
 .detail-color {
   color: $gray;
 }
 
 .height {
   line-height: 24px;
+}
+
+.input-description {
+  font-size: 16px;
+}
+
+.input-field {
+  background-color: $white;
+  border-radius: 5px;
+  height: 30px;
+  width: 250px;
+}
+
+.login-container {
+  background-color: $wild-sand;
+  height: 400px;
+  justify-content: space-between;
+  max-width: 300px;
+  padding: 25px 25px 15px;
+  position: relative;
+  width: 1000%;
+  &::before {
+    content: '';
+    border-top: 8px solid #00ADEE;
+    height: 4px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
 }
 
 .navbar {
@@ -156,4 +185,55 @@
     width: 100%;
     left: 0px;
   }
+}
+
+.login-img {
+  height: 70px;
+  margin: 0 24px;
+  width: 210px;
+}
+
+.login-detail {
+  background-color: $earls-green;
+  border-radius: 5px;
+  height: 30px;
+  width: 250px;
+  padding: 0 90px;
+  position: relative;
+  &::before {
+    content: '';
+    border-bottom: 2px solid $gray;
+    bottom: 0;
+    left: 0px;
+    margin-bottom: -20px;
+    position: absolute;
+    width: 100%;
+  }
+}
+
+.login-detail-font {
+  background-color: $earls-green;
+  color: $white;
+  font-size: 16px;
+  line-height: 20px;
+  margin: 5px;
+  width: 50px;
+}
+
+.sign-up-detail {
+  background-color: $wild-sand;
+  border: 2px solid $earls-green;
+  border-radius: 5px;
+  box-sizing: border-box;
+  height: 30px;
+  margin-top: 20px;
+  padding: 0 90px;
+  width: 250px;
+}
+
+.sign-up-detail-font {
+  color: $earls-green;
+  font-size: 16px;
+  line-height: 24px;
+  width: 55px;
 }
