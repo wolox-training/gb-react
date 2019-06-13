@@ -53,7 +53,7 @@
 .books-list {
   align-content: center;
   background-color: $wild-sand;
-  display: flex; 
+  display: flex;
   flex-wrap: wrap;
   padding: 120px;
   margin: 0 100px;
@@ -72,13 +72,10 @@
   width: 200px;
 }
 
-.book-preview-info {
-  margin-top: 10px;
-}
-
 .book-small-preview {
   height: 200px;
   width: 140px;
+  margin-bottom: 10px;
 }
 
 .book-title {
@@ -134,4 +131,9 @@
 .navbar-logo {
   height: 70px;
   width: 210px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
 }
