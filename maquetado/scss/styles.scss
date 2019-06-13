@@ -145,23 +145,15 @@
 
 .info-container {
   background-color: $wild-sand;
+  border-top: 6px solid $cerulean;
   justify-content: space-between;
   left: 50%;
   max-width: 300px;
-  padding: 25px 25px 15px;
+  padding: 0 20px 10px;
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
   width: 1000%;
-  &::before {
-    content: '';
-    background-color: $cerulean;
-    height: 8px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-  }
 }
 
 .navbar {
@@ -204,7 +196,7 @@
 
 .login-img {
   height: 70px;
-  margin: 0 24px 30px;
+  margin: 0 24px 20px;
   width: 210px;
 }
 
