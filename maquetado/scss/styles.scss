@@ -73,13 +73,10 @@
   width: 200px;
 }
 
-.book-preview-info {
-  margin-top: 10px;
-}
-
 .book-small-preview {
   height: 200px;
   width: 140px;
+  margin-bottom: 10px;
 }
 
 .book-title {
@@ -156,4 +153,9 @@
     width: 100%;
     left: 0px;
   }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
 }
