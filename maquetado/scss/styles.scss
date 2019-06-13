@@ -95,7 +95,7 @@
   position: relative;
   &::before {
     content:'';
-    border-bottom: 4px solid $earls-green;
+    background-color: $earls-green;
     bottom: 20px;
     height: 4px;
     position: absolute;
@@ -151,8 +151,8 @@
   width: 1000%;
   &::before {
     content: '';
-    border-top: 8px solid #00ADEE;
-    height: 4px;
+    background-color: $cerulean;
+    height: 8px;
     left: 0;
     position: absolute;
     top: 0;
@@ -170,7 +170,7 @@
   width: 100%;
   &::before {
     content:'';
-    border-top: 4px solid $cerulean;
+    background-color: $cerulean;
     height: 4px;
     left: 0;
     position: absolute;
@@ -214,8 +214,9 @@
   width: 250px;
   &::before {
     content: '';
-    height: 2px solid $gray;
-    bottom: 0;
+    background-color: $gray;
+    bottom: -16px;
+    height: 2px;
     left: 0px;
     position: absolute;
     width: 100%;
