@@ -13,6 +13,7 @@
 
 .book-container {
   display: flex;
+  flex-direction: row;
   background-color: $white;
   box-shadow: 4px 4px 10px 0 $black-05;
   max-width: 1000px;
@@ -248,4 +249,37 @@
 .row {
   display: flex;
   flex-direction: row;
+}
+
+@media only screen and (max-width: 1024px) {
+
+  .book-container {
+    align-items: center;
+    flex-direction: column;
+    height: 550px;
+    box-shadow: 4px 4px 10px 0 $black-05;
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 60px;
+    position: relative;
+    width: 100%;
+    &::after {
+      content: '';
+      background: url('./assets/book-badge.png') no-repeat center/contain;
+      height: 60px;
+      left: 220px;
+      position: absolute;
+      top: 40px;
+      transform: rotate(15deg);
+      width: 80px;
+    }
+  }
+
+  .book-cover {
+    display: block;
+    height: 300px;
+    width: 200px;
+    margin-right: 40px;
+    position: relative;
+  }
 }
