@@ -103,3 +103,8 @@
 .height {
   line-height: 24px;
 }
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
