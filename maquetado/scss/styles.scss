@@ -136,9 +136,12 @@
   background-color: $wild-sand;
   height: 400px;
   justify-content: space-between;
+  left: 50%;
   max-width: 300px;
   padding: 25px 25px 15px;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 1000%;
   &::before {
     content: '';
@@ -199,15 +202,15 @@
   background-color: $earls-green;
   border-radius: 5px;
   height: 30px;
-  width: 250px;
+  margin-bottom: 20px;
   padding: 0 90px;
   position: relative;
+  width: 250px;
   &::before {
     content: '';
-    border-bottom: 2px solid $gray;
+    height: 2px solid $gray;
     bottom: 0;
     left: 0px;
-    margin-bottom: -20px;
     position: absolute;
     width: 100%;
   }
@@ -228,7 +231,6 @@
   border-radius: 5px;
   box-sizing: border-box;
   height: 30px;
-  margin-top: 20px;
   padding: 0 90px;
   width: 250px;
 }
