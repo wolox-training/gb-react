@@ -62,11 +62,14 @@
 
 .books-list {
   align-content: center;
-  background-color: $wild-sand;
   display: flex;
   flex-wrap: wrap;
   padding: 120px;
   margin: 0 100px;
+}
+
+.books-list-background {
+  background-color: $wild-sand;
 }
 
 .book-preview {
