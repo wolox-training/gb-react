@@ -253,33 +253,77 @@
 
 @media only screen and (max-width: 1024px) {
 
+  .body-detail {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .book-info-container {
+    flex-grow: 0;
+    margin-right: 0;
+  }
+
+  .book-title-container {
+    margin-bottom: 0;
+  }
+
+  .book-title {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+
+  .book-gender {
+    font-size: 16px;
+  }
+
+  .book-detail-name {
+    font-size: 14px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+  }
+
+  .book-detail-value {
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+
   .book-container {
     align-items: center;
     flex-direction: column;
-    height: 550px;
+    height: 520px;
     box-shadow: 4px 4px 10px 0 $black-05;
-    max-width: 400px;
-    margin: 60px auto;
-    padding: 60px;
+    max-width: 330px;
+    margin: 30px auto;
+    padding: 30px;
     position: relative;
     width: 100%;
     &::after {
       content: '';
       background: url('./assets/book-badge.png') no-repeat center/contain;
-      height: 60px;
+      height: 70px;
       left: 220px;
       position: absolute;
-      top: 40px;
+      top: 20px;
       transform: rotate(15deg);
-      width: 80px;
     }
   }
 
   .book-cover {
     display: block;
     height: 300px;
-    width: 200px;
-    margin-right: 40px;
+    width: 210px;
+    margin: 0px 40px 10px;
     position: relative;
   }
+
+  .redirect-arrow {
+    margin-left: 0;
+    order: 1;
+  }
+
+  .height {
+    line-height: 16px;
+  }
+
 }
