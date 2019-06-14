@@ -1,0 +1,22 @@
+.navbar {
+  background-color: $white;
+  box-shadow: 0 4px 10px 0 $black-05;
+  height: 70px;
+  padding-left: 200px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  &::before {
+    content:'';
+    background-color: $cerulean;
+    height: 4px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }
+}
+
+.navbar-logo {
+  height: 70px;
+  width: 210px;
+}
