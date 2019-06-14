@@ -160,12 +160,14 @@
 @media only screen and (max-width: 1024px) {
 
   .body-detail {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    grid-gap: 10px;
   }
 
   .book-info-container {
+    display: grid;
     flex-grow: 0;
     margin-right: 0;
   }
@@ -197,7 +199,7 @@
   .book-container {
     align-items: center;
     box-shadow: 4px 4px 10px 0 $black-05;
-    flex-direction: column;
+    display: grid;
     max-width: 330px;
     margin: 30px auto;
     padding: 30px;
@@ -215,7 +217,7 @@
   }
 
   .book-cover {
-    display: block;
+    display: grid;
     height: 300px;
     width: 210px;
     margin: 0px 40px 10px;
