@@ -199,6 +199,9 @@
 .login-detail {
   background-color: $earls-green;
   border-radius: 5px;
+  color: $white;
+  font-size: 16px;
+  line-height: 20px;
   height: 30px;
   margin-bottom: 30px;
   padding: 0 90px;
@@ -215,30 +218,17 @@
   }
 }
 
-.login-detail-font {
-  background-color: $earls-green;
-  color: $white;
-  font-size: 16px;
-  line-height: 20px;
-  margin: 5px;
-  width: 50px;
-}
-
 .sign-up-detail {
   background-color: $wild-sand;
   border: 2px solid $earls-green;
   border-radius: 5px;
   box-sizing: border-box;
-  height: 30px;
-  padding: 0 90px;
-  width: 250px;
-}
-
-.sign-up-detail-font {
   color: $earls-green;
   font-size: 16px;
   line-height: 24px;
-  width: 55px;
+  height: 30px;
+  padding: 0 90px;
+  width: 250px;
 }
 
 .row {
