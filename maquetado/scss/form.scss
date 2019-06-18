@@ -37,12 +37,12 @@
   position: relative;
   width: 250px;
   &::before {
-    content: '';
     background-color: $gray;
-    bottom: -16px;
+    content: '';
     height: 2px;
     left: 0px;
     position: absolute;
+    top: calc(100% + 14px);
     width: 100%;
   }
 }
