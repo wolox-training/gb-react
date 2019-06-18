@@ -21,41 +21,39 @@
 
 .login-img {
   height: 70px;
-  margin: 0 auto;
+  margin: 0 auto 20px;
   width: 210px;
 }
 
-.confirmation-detail {
-  background-color: $earls-green;
+
+.submit-button,
+.redirect-button {
   border-radius: 5px;
-  color: $white;
+  display: flex;
   font-size: 16px;
-  line-height: 20px;
   height: 30px;
-  margin-bottom: 30px;
-  padding: 0 90px;
-  position: relative;
+  justify-content: center;
   width: 250px;
+  position: relative;
+}
+
+.submit-button {
+  background-color: $earls-green;
+  color: $white;
+  margin-bottom: 30px;
   &::before {
-    content: '';
     background-color: $gray;
-    bottom: -16px;
+    content: '';
     height: 2px;
     left: 0px;
     position: absolute;
+    top: calc(100% + 14px);
     width: 100%;
   }
 }
 
-.back-detail {
+.redirect-button {
   background-color: $wild-sand;
   border: 2px solid $earls-green;
-  border-radius: 5px;
-  box-sizing: border-box;
   color: $earls-green;
-  font-size: 16px;
-  line-height: 24px;
-  height: 30px;
-  padding: 0 90px;
-  width: 250px;
 }
