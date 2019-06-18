@@ -8,8 +8,8 @@
   width: 100%;
   z-index: 1;
   &::before {
-    content:'';
     background-color: $cerulean;
+    content:'';
     height: 4px;
     left: 0;
     position: absolute;
