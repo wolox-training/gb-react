@@ -4,11 +4,13 @@
   box-shadow: 4px 4px 10px 0 $black-05;
   grid-template-columns: 0.4fr 0.6fr;
   padding: 20px;
+  max-width: 1000px;
+  margin: 60px auto;
   position: relative;
   width: 100%;
   &::after {
-    content: '';
     background: url('./assets/book-badge.png') no-repeat center/contain;
+    content: '';
     height: 100px;
     left: 260px;
     position: absolute;
@@ -66,7 +68,12 @@
   height: 300px;
   margin: 20px;
   padding: 30px 30px;
+  transition: transform 1s;
   width: 200px;
+  &:hover {
+  transform: scale(1.2);
+  }
+
 }
 
 .book-small-preview {
@@ -85,8 +92,9 @@
   margin-bottom: 30px;
   position: relative;
   &::before {
-    content:'';
     background-color: $earls-green;
+    bottom: 20px;
+    content:'';
     height: 4px;
     position: absolute;
     top: 30px;
