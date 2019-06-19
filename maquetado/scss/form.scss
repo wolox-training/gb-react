@@ -1,0 +1,59 @@
+.info-container {
+  background-color: $wild-sand;
+  left: 50%;
+  max-width: 300px;
+  padding: 25px 25px 15px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  &::before {
+    background-color: $cerulean;
+    content: '';
+    height: 8px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.login-img {
+  height: 70px;
+  margin: 0 auto 20px;
+  width: 210px;
+}
+
+
+.submit-button,
+.redirect-button {
+  align-items: center;
+  border-radius: 5px;
+  display: flex;
+  font-size: 16px;
+  height: 30px;
+  justify-content: center;
+  position: relative;
+  width: 250px;
+}
+
+.submit-button {
+  background-color: $earls-green;
+  color: $white;
+  margin-bottom: 30px;
+  &::before {
+    background-color: $gray;
+    content: '';
+    height: 2px;
+    left: 0px;
+    position: absolute;
+    top: calc(100% + 14px);
+    width: 100%;
+  }
+}
+
+.redirect-button {
+  background-color: $wild-sand;
+  border: 2px solid $earls-green;
+  color: $earls-green;
+}

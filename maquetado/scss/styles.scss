@@ -1,112 +1,19 @@
+.body-detail {
+  height: 100vh;
+  padding: 40px 60px;
+}
+
+.body-background {
+  background-color: $wild-sand;
+}
+
 .bold {
   font-weight: bold;
-}
-
-.book-container {
-  display: flex;
-  background-color: $white;
-  box-shadow: 4px 4px 10px 0 $black-05;
-  max-width: 1000px;
-  margin: 60px auto;
-  padding: 20px;
-  position: relative;
-  width: 100%;
-  &::after {
-    content: '';
-    background: url('./assets/book-badge.png') no-repeat center/contain;
-    height: 100px;
-    left: 220px;
-    position: absolute;
-    top: 0;
-    transform: rotate(15deg);
-    width: 80px;
-  }
-}
-
-.book-cover {
-  display: block;
-  height: 360px;
-  margin-right: 40px;
-  position: relative;
-}
-
-.book-detail-name {
-  font-size: 20px;
-  margin-bottom: 20px;
-  margin-right: 4px;
-}
-
-.book-detail-value {
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-
-.book-gender {
-  font-size: 24px;
-  margin-right: 4px;
-}
-
-.book-info-container {
-  flex-grow: 1;
-  margin-right: 100px;
-}
-
-.books-list {
-  align-content: center;
-  background-color: $wild-sand;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 120px;
-  margin: 0 100px;
-}
-
-.books-list-background {
-  background-color: $wild-sand;
-}
-
-.book-preview {
-  background-color: $white;
-  box-shadow: 4px 4px 10px 0 $black-05;
-  height: 300px;
-  margin: 20px;
-  padding: 30px 30px;
-  width: 200px;
-}
-
-.book-small-preview {
-  height: 200px;
-  width: 140px;
-  margin-bottom: 10px;
-}
-
-.book-title {
-  font-size: 32px;
-  margin: 20px 0 40px;
-}
-
-.book-title-container {
-  align-items: baseline;
-  margin-bottom: 40px;
-  position: relative;
-  &::before {
-    content:'';
-    border-bottom: 4px solid $earls-green;
-    bottom: 20px;
-    height: 4px;
-    position: absolute;
-    width: 100%;
-  }
 }
 
 .column {
   display: flex;
   flex-direction: column;
-}
-
-.body-detail {
-  background-color: $wild-sand;
-  height: 100vh;
-  padding: 40px 60px;
 }
 
 .detail-color {
@@ -117,33 +24,23 @@
   line-height: 24px;
 }
 
-.navbar {
-  background-color: $white;
-  box-shadow: 0 4px 10px 0 $black-05;
-  height: 70px;
-  padding-left: 200px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  &::before {
-    content:'';
-    border-top: 4px solid $cerulean;
-    height: 4px;
-    left: 0;
-    position: absolute;
-    width: 100%;
-  }
+.input-label {
+  font-size: 14px;
+  margin-bottom: 12px;
 }
 
-.navbar-logo {
-  height: 70px;
-  width: 210px;
+.input-field {
+  background-color: $white;
+  border-radius: 5px;
+  height: 30px;
+  margin-bottom: 16px;
+  width: 250px;
 }
 
 .redirect-arrow {
   font-size: 20px;
-  margin-left: 100px;
   position: relative;
+  transform: translateX(70%);
   &::before {
     content: '';
     background: url(./assets/back-arrow.png) no-repeat;
@@ -158,4 +55,24 @@
 .row {
   display: flex;
   flex-direction: row;
+}
+
+@media only screen and (max-width: 1024px) {
+
+  .body-detail {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .redirect-arrow {
+    margin: 0;
+    order: 1;
+    transform: translateX(10%);
+  }
+
+  .height {
+    line-height: 16px;
+  }
+
 }
