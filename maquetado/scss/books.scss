@@ -62,7 +62,12 @@
   height: 300px;
   margin: 20px;
   padding: 30px 30px;
+  transition: transform 1s;
   width: 200px;
+  &:hover {
+  transform: scale(1.2);
+  }
+
 }
 
 .book-small-preview {
