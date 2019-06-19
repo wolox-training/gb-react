@@ -1,13 +1,15 @@
 .book-container {
-  display: flex;
   background-color: $white;
   box-shadow: 4px 4px 10px 0 $black-05;
+  display: flex;
+  max-width: 1000px;
+  margin: 60px auto;
   padding: 20px;
   position: relative;
   width: 100%;
   &::after {
-    content: '';
     background: url('./assets/book-badge.png') no-repeat center/contain;
+    content: '';
     height: 100px;
     left: 260px;
     position: absolute;
@@ -81,8 +83,9 @@
   margin-bottom: 30px;
   position: relative;
   &::before {
-    content:'';
     background-color: $earls-green;
+    bottom: 20px;
+    content:'';
     height: 4px;
     position: absolute;
     top: 30px;
