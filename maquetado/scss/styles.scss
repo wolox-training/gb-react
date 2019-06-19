@@ -25,22 +25,22 @@
 }
 
 .input-label {
-  font-size: 16px;
-  margin-bottom: 16px;
+  font-size: 14px;
+  margin-bottom: 12px;
 }
 
 .input-field {
   background-color: $white;
   border-radius: 5px;
   height: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 16px;
   width: 250px;
 }
 
 .redirect-arrow {
   font-size: 20px;
-  margin-left: 100px;
   position: relative;
+  transform: translateX(70%);
   &::before {
     content: '';
     background: url(./assets/back-arrow.png) no-repeat;
@@ -55,4 +55,24 @@
 .row {
   display: flex;
   flex-direction: row;
+}
+
+@media only screen and (max-width: 1024px) {
+
+  .body-detail {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .redirect-arrow {
+    margin: 0;
+    order: 1;
+    transform: translateX(10%);
+  }
+
+  .height {
+    line-height: 16px;
+  }
+
 }
