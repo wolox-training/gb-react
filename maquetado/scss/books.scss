@@ -48,7 +48,7 @@
   display: grid;
   flex-grow: 1;
   grid-template-columns: 2fr 3fr;
-  grid-template-rows: auto 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto repeat(6, 1fr);
 }
 
 .books-list {
@@ -115,7 +115,7 @@
   .book-info-container {
     flex-grow: 0;
     grid-template-columns: 1fr;
-    grid-template-rows: 0.2fr 0.2fr 0.2fr 0.1fr 0.1fr 0.1fr;
+    grid-template-rows: repeat(3, 2fr) repeat(3, 1fr);
   }
 
   .book-title {
@@ -173,5 +173,4 @@
     margin: 0 auto 20px;
     width: 210px;
   }
-
 }
