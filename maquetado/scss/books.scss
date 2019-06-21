@@ -114,6 +114,7 @@
 @media only screen and (max-width: 1024px) {
   .book-info-container {
     flex-grow: 0;
+    grid-template-columns: 1fr;
     grid-template-rows: 0.2fr 0.2fr 0.2fr 0.1fr 0.1fr 0.1fr;
   }
 
@@ -126,6 +127,7 @@
   }
 
   .book-gender-container {
+    grid-row: 3 / 4;
     position: relative;
     &::before {
       background-color: $earls-green;
@@ -166,8 +168,10 @@
   }
 
   .book-cover {
+    grid-row: 2 / 3;
     height: 300px;
     margin: 0 auto 20px;
     width: 210px;
   }
+
 }
