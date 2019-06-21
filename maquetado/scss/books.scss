@@ -1,11 +1,10 @@
 .book-container {
-  display: grid;
+  align-self: center;
   background-color: $white;
   box-shadow: 4px 4px 10px 0 $black-05;
+  display: grid;
   grid-template-columns: 0.4fr 0.6fr;
-  padding: 20px;
   max-width: 1000px;
-  margin: 60px auto;
   padding: 20px;
   position: relative;
   width: 100%;
@@ -45,10 +44,9 @@
 }
 
 .book-info-container {
-  display: grid;
   flex-grow: 1;
   grid-template-rows: 0.2fr 0.2fr 0.2fr 0.2fr;
-  margin-top: 40px;
+  padding-top: 40px;
 }
 
 .books-list {
