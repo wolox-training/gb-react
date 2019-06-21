@@ -116,6 +116,7 @@
     flex-grow: 0;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 2fr) repeat(3, 1fr);
+    max-height: calc(90vh - 90px);
   }
 
   .book-title {
@@ -153,7 +154,6 @@
 
   .book-container {
     display: grid;
-    grid-template-columns: auto;
     max-width: 350px;
     margin-bottom: 30px;
     padding: 30px;
