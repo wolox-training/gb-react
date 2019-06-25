@@ -12,14 +12,24 @@ class Game extends Component{
       history: [{
         squares: Array(9).fill(null)
       }],
+      stepNumber: 0,
       player: 'X'
     };
   }
 
   changeTurn = () => this.state.player === 'X' ? 'O' : 'X';
 
+  jumpTo(step) {
+    if (this.state.player === 'X' && (step % 2)) {
+      this.setState({ stepNumber: step, player: 'X' })
+    }
+    if (this.state.player === 'O' && !(step % 2)) {
+      this.setState({ stepNumber: step, player: 'O' })
+    }
+  }
+
   handleClick = i => {
-    const history = this.state.history;
+    const history = this.state.history.slice(0, this.state.stepNumber + 1);
     const current = history[history.length -1];
     const squares = current.squares.slice();
 
@@ -31,6 +41,7 @@ class Game extends Component{
       history : history.concat([
         { squares : squares }
       ]),
+      stepNumber: history.length,
       player: this.changeTurn() });
   }
 
@@ -56,9 +67,18 @@ class Game extends Component{
 
   render() {
     const history = this.state.history;
-    const current = history[history.length -1];
+    const current = history[this.state.stepNumber];
     const winner = this.calculateWinner(current.squares);
+    const moves = history.map((step, move) => {
+      const desc = move ? 'Back to #' + move: 'Back to start';
+      return (
+        <li key={move}>
+          <button onClick={() => this.jumpTo(move)}>{desc}</button>
+        </li>
+      );
+    });
     let status = this.state.player;
+
 
     winner ? status = winner : status = this.state.player + `'s turn`;
 
@@ -72,7 +92,7 @@ class Game extends Component{
         </div>
         <div className={styles.gameInfo}>
           <div>{status}</div>
-          <ol>{/* TODO */}</ol>
+          <ol>{moves}</ol>
         </div>
       </div>
     );
