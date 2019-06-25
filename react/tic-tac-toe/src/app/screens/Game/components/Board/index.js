@@ -5,12 +5,28 @@ import Square from '../Square';
 import styles from './styles.module.scss';
 
 class Board extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      squares: Array(9).fill(null),
+      player: 'X',
+    };
+  }
+
+  changeTurn = () => this.state.player === 'X' ? 'O' : 'X';
+
+  handleClick(i) {
+    const squares = this.state.squares.slice();
+    squares[i] = this.state.player;
+    this.setState({squares : squares, player : this.changeTurn() });
+  }
+
   renderSquare(i) {
-    return <Square value={i} />;
+    return <Square value={this.state.squares[i]} onClick={ ()=> this.handleClick(i)} />;
   }
 
   render() {
-    const status = 'Next player: X';
+    const status = this.state.player + `'s turn`;
     return (
       <div>
         <div className={styles.status}>{status}</div>
