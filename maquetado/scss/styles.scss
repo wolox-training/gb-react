@@ -1,5 +1,8 @@
 .body-detail {
+  display: grid;
+  grid-gap: 15px;
   height: 100vh;
+  justify-items: center;
   padding: 40px 60px;
 }
 
@@ -38,9 +41,10 @@
 }
 
 .redirect-arrow {
+  display: flex;
   font-size: 20px;
+  justify-self: flex-start;
   position: relative;
-  transform: translateX(70%);
   &::before {
     content: '';
     background: url(./assets/back-arrow.png) no-repeat;
@@ -60,12 +64,13 @@
 @media only screen and (max-width: 1024px) {
 
   .body-detail {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    height: 100vh;
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 5px;
   }
 
   .redirect-arrow {
+    justify-self: center;
     margin: 0;
     order: 1;
     transform: translateX(10%);
