@@ -4,30 +4,32 @@ import Square from '../Square';
 
 import styles from './styles.module.scss';
 
-class Board extends Component {
-  const { squares, onClick } = this.props;
-  renderSquare = index => (
-    <Square
-      value={squares[index]}
-      onClick={()=> onClick(index)}
-    />
+export const boardRows = [[0,1,2], [3,4,5], [6,7,8]];
+
+function SquareList({ boardRow, squares, onClick }) {
+  return (
+    <div className={styles.boardRow}>
+      {boardRow.map(index => (
+        <Square
+          key={index}
+          value={squares[index]}
+          onClick={onClick}
+          index={index}
+        />))}
+    </div>
   )
+}
 
-  const boardRows = [[0,1,2], [3,4,5], [6,7,8]];
-  const [firstRow, secondRow, thirdRow] = boardRows;
-
+class Board extends Component {
   render() {
+    const { squares, onClick } = this.props;
+    const [firstRow, secondRow, thirdRow] = boardRows;
+
     return (
       <div>
-        <div className={styles.boardRow}>
-          {firstRow.map(index => this.renderSquare(index)}
-        </div>
-        <div className={styles.boardRow}>
-          {secondRow.map(index => this.renderSquare(index)}
-        </div>
-        <div className={styles.boardRow}>
-          {thirdRow.map(index => this.renderSquare(index)}
-        </div>
+        <SquareList boardRow={firstRow} squares={squares} onClick={onClick} />
+        <SquareList boardRow={secondRow} squares={squares} onClick={onClick} />
+        <SquareList boardRow={thirdRow} squares={squares} onClick={onClick} />
       </div>
     );
   }

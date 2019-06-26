@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import styles from './styles.module.scss';
 import Board from './components/Board';
+import HistoryList from './components/HistoryList';
 
 class Game extends Component {
   state = {
@@ -14,13 +15,14 @@ class Game extends Component {
 
   changeTurn = () => this.state.player === 'X' ? 'O' : 'X';
 
-  jumpTo(step) {
-    if (this.state.player === 'X' && step % 2) {
-      this.setState({ stepNumber: step, player: 'X' });
-    }
-    if (this.state.player === 'O' && !(step % 2)) {
-      this.setState({ stepNumber: step, player: 'O' });
-    }
+  jumpTo = (step) => {
+    const player = step % 2 ? 'X' : '0';
+    const history = this.state.history.slice(0, step + 1);
+    this.setState({
+      stepNumber: step,
+      player,
+      history
+    });
   }
 
   handleClick = i => {
@@ -62,19 +64,9 @@ class Game extends Component {
     return null;
   }
 
-  const history = this.state.history;
-  const current = history[this.state.stepNumber];
-  const winner = this.calculateWinner(current.squares);
-  const movesHistory = history.map((step, move) => {
-    const desc = move ? `Back to #${move}` : 'Back to start';
-    return (
-      <li key={move}>
-        <button onClick={() => this.jumpTo(move)}>{desc}</button>
-      </li>
-    );
-  });
-  
   render() {
+    const current = this.state.history[this.state.stepNumber];
+    const winner = this.calculateWinner(current.squares);
     let status = this.state.player;
     winner ? status = winner : status = `${this.state.player}'s turn`;
 
@@ -88,7 +80,10 @@ class Game extends Component {
         </div>
         <div className={styles.gameInfo}>
           <div>{status}</div>
-          <ol>{movesHistory}</ol>
+          <HistoryList
+            history={this.state.history}
+            onChangeHistory={this.jumpTo}
+          />
         </div>
       </div>
     );
