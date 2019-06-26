@@ -4,16 +4,13 @@ import styles from './styles.module.scss';
 import Board from './components/Board';
 
 class Game extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      history: [{
-        squares: Array(9).fill(null)
-      }],
-      stepNumber: 0,
-      player: 'X'
-    };
-  }
+  state = {
+    history: [{
+      squares: Array(9).fill(null)
+    }],
+    stepNumber: 0,
+    player: 'X'
+  };
 
   changeTurn = () => this.state.player === 'X' ? 'O' : 'X';
 
@@ -28,8 +25,8 @@ class Game extends Component {
 
   handleClick = i => {
     const history = this.state.history.slice(0, this.state.stepNumber + 1);
-    const current = history[history.length - 1];
-    const squares = current.squares.slice();
+    const current = history[this.state.stepNumber];
+    const squares = [...current.squares];
 
     if (this.calculateWinner(squares) || squares[i]) {
       return;
@@ -77,9 +74,8 @@ class Game extends Component {
         </li>
       );
     });
+    
     let status = this.state.player;
-
-
     winner ? status = winner : status = `${this.state.player}'s turn`;
 
     return (
