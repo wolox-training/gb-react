@@ -4,9 +4,9 @@ import Square from '../Square';
 
 import styles from './styles.module.scss';
 
-export const boardRows = [[0,1,2], [3,4,5], [6,7,8]];
+export const boardRows = [[0, 1, 2], [3, 4, 5], [6, 7, 8]];
 
-function SquareList({ boardRow, squares, onClick }) {
+function SquareList({ boardRow, squares, onClick }) { // a otro file
   return (
     <div className={styles.boardRow}>
       {boardRow.map(index => (
@@ -17,10 +17,10 @@ function SquareList({ boardRow, squares, onClick }) {
           index={index}
         />))}
     </div>
-  )
+  );
 }
 
-class Board extends Component {
+class Board extends Component { // pure function
   render() {
     const { squares, onClick } = this.props;
     const [firstRow, secondRow, thirdRow] = boardRows;

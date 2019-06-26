@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import styles from './styles.module.scss';
 import Board from './components/Board';
 import HistoryList from './components/HistoryList';
+import { boardLines } from './constants';
 
 class Game extends Component {
   state = {
@@ -25,38 +26,31 @@ class Game extends Component {
     });
   }
 
-  handleClick = i => {
+  handleClick = index => {
     const history = this.state.history.slice(0, this.state.stepNumber + 1);
     const current = history[this.state.stepNumber];
     const squares = [...current.squares];
+    const hasWon = this.calculateWinner(squares);
+    const isFilled = squares[index];
 
-    if (this.calculateWinner(squares) || squares[i]) {
+    if (hasWon || isFilled) {
       return;
     }
 
-    squares[i] = this.state.player;
+    squares[index] = this.state.player;
     return this.setState({
       squares,
       history: history.concat([
         { squares }
       ]),
       stepNumber: history.length,
-      player: this.changeTurn() });
+      player: this.changeTurn()
+    });
   }
 
   calculateWinner = squares => {
-    const lines = [
-      [0, 1, 2],
-      [3, 4, 5],
-      [6, 7, 8],
-      [0, 3, 6],
-      [1, 4, 7],
-      [2, 5, 8],
-      [0, 4, 8],
-      [2, 4, 6]
-    ];
-    for (let i = 0; i < lines.length; i++) {
-      const [a, b, c] = lines[i];
+    for (let i = 0; i < boardLines.length; i++) {
+      const [a, b, c] = boardLines[i];
       if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
         return squares[a];
       }
@@ -67,8 +61,7 @@ class Game extends Component {
   render() {
     const current = this.state.history[this.state.stepNumber];
     const winner = this.calculateWinner(current.squares);
-    let status = this.state.player;
-    winner ? status = winner : status = `${this.state.player}'s turn`;
+    let status = status = winner ? `Winner: ${winner}` : `${this.state.player}'s turn`;
 
     return (
       <div className={styles.game}>

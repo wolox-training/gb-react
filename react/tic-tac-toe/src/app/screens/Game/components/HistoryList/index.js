@@ -13,7 +13,7 @@ class HistoryList extends Component {
           );
         })}
       </ol>
-    )
+    );
   }
 }
 
