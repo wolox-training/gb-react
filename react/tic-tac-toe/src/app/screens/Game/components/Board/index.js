@@ -13,23 +13,20 @@ class Board extends Component {
     />
   )
 
+  const boardRows = [[0,1,2], [3,4,5], [6,7,8]];
+  const [firstRow, secondRow, thirdRow] = boardRows;
+
   render() {
     return (
       <div>
         <div className={styles.boardRow}>
-          {this.renderSquare(0)}
-          {this.renderSquare(1)}
-          {this.renderSquare(2)}
+          {firstRow.map(index => this.renderSquare(index)}
         </div>
         <div className={styles.boardRow}>
-          {this.renderSquare(3)}
-          {this.renderSquare(4)}
-          {this.renderSquare(5)}
+          {secondRow.map(index => this.renderSquare(index)}
         </div>
         <div className={styles.boardRow}>
-          {this.renderSquare(6)}
-          {this.renderSquare(7)}
-          {this.renderSquare(8)}
+          {thirdRow.map(index => this.renderSquare(index)}
         </div>
       </div>
     );
