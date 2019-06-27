@@ -20,8 +20,8 @@ function SquareList({ boardRow, squares, onClick }) {
 }
 
 SquareList.propTypes = {
-  boardRow: PropTypes.arrayOf(PropTypes.array),
-  squares: PropTypes.arrayOf(PropTypes.array),
+  boardRow: PropTypes.arrayOf(PropTypes.number),
+  squares: PropTypes.arrayOf(PropTypes.string),
   onClick: PropTypes.func
 };
 
