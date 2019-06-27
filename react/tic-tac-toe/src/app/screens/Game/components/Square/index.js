@@ -10,13 +10,22 @@ class Square extends Component {
   }
 
   render() {
-    const { index, value, onClick } = this.props;
+    const { value } = this.props;
     return (
-      <button className={styles.square} onClick={this.handleClick}>
+      <button
+        type="button"
+        className={styles.square} onClick={this.handleClick}
+      >
         {value}
       </button>
     );
   }
 }
+
+Square.propTypes = {
+  index: PropTypes.number,
+  value: PropTypes.string,
+  onClick: PropTypes.func
+};
 
 export default Square;
