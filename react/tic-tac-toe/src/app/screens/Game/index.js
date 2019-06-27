@@ -19,7 +19,7 @@ class Game extends Component {
 
   handleJumpTo = (stepNumber) => {
     const { history } = this.state;
-    const player = stepNumber % 2 ? 'X' : '0';
+    const player = stepNumber % 2 ? 'X' : 'O';
     this.setState({
       stepNumber,
       player,
