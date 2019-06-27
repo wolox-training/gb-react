@@ -8,6 +8,7 @@ class HistoryList extends Component {
   }
 
   render () {
+    const { history } = this.props;
     return (
       <ol>
         {history.map((_step, move) => {
@@ -28,6 +29,7 @@ class HistoryList extends Component {
 }
 
 HistoryList.propTypes = {
+  history: PropTypes.arrayOf(PropTypes.object),
   move: PropTypes.number,
   onChangeHistory: PropTypes.func
 };
