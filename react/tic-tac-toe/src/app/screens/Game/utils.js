@@ -1,8 +1,8 @@
-import { boardLines } from './constants';
+import { winningLines } from './constants';
 
 const calculateWinner = squares => {
-  for (let i = 0; i < boardLines.length; i++) {
-    const [a, b, c] = boardLines[i];
+  for (let i = 0; i < winningLines.length; i++) {
+    const [a, b, c] = winningLines[i];
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
       return squares[a];
     }
