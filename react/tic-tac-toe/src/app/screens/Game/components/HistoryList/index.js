@@ -18,7 +18,9 @@ function HistoryList({ history, onChangeHistory }) {
 }
 
 HistoryList.propTypes = {
-  history: PropTypes.arrayOf(PropTypes.object),
+  history: PropTypes.arrayOf(PropTypes.shape({
+    squares: PropTypes.string
+  })),
   onChangeHistory: PropTypes.func
 };
 
