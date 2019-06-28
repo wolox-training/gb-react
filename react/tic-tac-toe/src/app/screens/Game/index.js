@@ -50,9 +50,10 @@ class Game extends Component {
   }
 
   render() {
-    const current = this.state.history[this.state.stepNumber];
+    const { history, stepNumber, player } = this.state;
+    const current = history[stepNumber];
     const winner = calculateWinner(current.squares);
-    const status = winner ? `Winner: ${winner}` : `${this.state.player}'s turn`;
+    const status = winner ? `Winner: ${winner}` : `${player}'s turn`;
 
     return (
       <div className={styles.game}>
@@ -65,7 +66,7 @@ class Game extends Component {
         <div className={styles.gameInfo}>
           <div>{status}</div>
           <HistoryList
-            history={this.state.history}
+            history={history}
             onChangeHistory={this.handleJumpTo}
           />
         </div>
