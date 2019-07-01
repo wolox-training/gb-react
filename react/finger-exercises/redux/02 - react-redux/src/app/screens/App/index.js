@@ -54,23 +54,29 @@ class App extends Component {
 
   render() {
     return (
-      <Fragment>
-        <Navbar />
-        <div className={styles.container}>
-          <Search onSearch={this.onSearch} />
-          {this.state.books.length ? (
-            this.state.books.map(this.renderBooks)
-          ) : (
-            <div className={styles.noData}>
-              <h2 className={styles.title}>No Data</h2>
-            </div>
-          )}
-        </div>
-        {this.state.bookSelected.length ? (
-          <ShoppingCart data={this.state.bookSelected} addItem={this.addItem} removeItem={this.removeItem} />
-        ) : null}
-        <Footer />
-      </Fragment>
+      <Provider store={store}>
+        <Fragment>
+          <Navbar />
+          <div className={styles.container}>
+            <Search onSearch={this.onSearch} />
+            {this.state.books.length ? (
+              this.state.books.map(this.renderBooks)
+            ) : (
+              <div className={styles.noData}>
+                <h2 className={styles.title}>No Data</h2>
+              </div>
+            )}
+          </div>
+          {this.state.bookSelected.length ? (
+            <ShoppingCart
+              data={this.state.bookSelected}
+              addItem={this.addItem}
+              removeItem={this.removeItem}
+            />
+          ) : null}
+          <Footer />
+        </Fragment>
+      </Provider>
     );
   }
 }

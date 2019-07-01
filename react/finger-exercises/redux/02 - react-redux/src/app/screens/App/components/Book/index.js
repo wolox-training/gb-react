@@ -64,4 +64,9 @@ Book.propTypes = {
   })
 };
 
+const mapStateToProps = {
+  data: state.data,
+  configButton: state.configButton
+}
+
 export default Book;
