@@ -1,4 +1,5 @@
 import React, { PureComponent, Fragment } from 'react';
+import { connect } from 'react-redux';
 import { arrayOf, func } from 'prop-types';
 import { bookSelectedPropType } from '@constants/propTypes';
 import Button from '@components/Button';
@@ -47,4 +48,10 @@ ShoppingCart.propTypes = {
   removeItem: func.isRequired
 };
 
-export default ShoppingCart;
+const mapStateToProps = state => ({
+  data: state.data,
+  addItem: state.addItem,
+  removeItem: state.removeItem
+});
+
+export default connect(mapStateToProps)(ShoppingCart);

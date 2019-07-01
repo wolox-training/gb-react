@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { func } from 'prop-types';
 
 import styles from './styles.scss';
@@ -17,4 +18,8 @@ Search.propTypes = {
   onSearch: func.isRequired
 };
 
-export default Search;
+const mapStateToProps = state => ({
+  onSearch: state.onSearch
+});
+
+export default connect(mapStateToProps)(Search);

@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import { connect } from 'react-redux';
 import { func, bool, shape, string, number } from 'prop-types';
 import Button from '@components/Button';
 
@@ -64,9 +65,9 @@ Book.propTypes = {
   })
 };
 
-const mapStateToProps = {
+const mapStateToProps = state => ({
   data: state.data,
   configButton: state.configButton
-}
+});
 
-export default Book;
+export default connect(mapStateToProps)(Book);

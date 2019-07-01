@@ -17,7 +17,7 @@ function reducer(state = initialState, action) {
     case actions.REMOVE_ITEM: // TODO to implement the logic
       return { ...state, books: [...state.books.filter(each => each.id !== actions.payload.itemId)] };
     case actions.SEARCH_ITEM: // TODO to implement the logic
-      return { ...state, item: [...state.books.filter(each => each.id === actions.payload.itemId)]};
+      return { ...state, item: [...state.books.filter(each => each.name === actions.payload.itemId)]};
     default:
       return state;
   }
