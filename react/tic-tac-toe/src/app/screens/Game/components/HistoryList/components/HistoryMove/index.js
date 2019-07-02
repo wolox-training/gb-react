@@ -19,8 +19,8 @@ class HistoryMove extends Component {
 }
 
 HistoryMove.propTypes = {
-  moveNumber: PropTypes.number,
-  onChangeHistory: PropTypes.func
+  moveNumber: PropTypes.number.isRequired,
+  onChangeHistory: PropTypes.func.isRequired
 };
 
 export default HistoryMove;

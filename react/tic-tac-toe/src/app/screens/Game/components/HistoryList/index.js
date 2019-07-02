@@ -20,8 +20,8 @@ function HistoryList({ history, onChangeHistory }) {
 HistoryList.propTypes = {
   history: PropTypes.arrayOf(PropTypes.shape({
     squares: PropTypes.string
-  })),
-  onChangeHistory: PropTypes.func
+  })).isRequired,
+  onChangeHistory: PropTypes.func.isRequired
 };
 
 export default HistoryList;
