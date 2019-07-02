@@ -9,7 +9,11 @@ const initialState = {
 function reducer(state = initialState, action) {
   switch (action.type) {
     case actions.GET_BOOKS: // TODO to implement the logic
+<<<<<<< Updated upstream
       return { ...state };
+=======
+      return { ...state, originalData: [...action.payload] };
+>>>>>>> Stashed changes
     case actions.ADD_TO_CART: // TODO to implement the logic
       return { ...state };
     case actions.ADD_ITEM: // TODO to implement the logic

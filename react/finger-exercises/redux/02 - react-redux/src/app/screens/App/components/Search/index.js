@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { func } from 'prop-types';
 
+import { actionsCreators as bookActions } from '../../../../../redux/book/actions';
+
 import styles from './styles.scss';
 
 class Search extends Component {
@@ -17,4 +19,15 @@ Search.propTypes = {
   onSearch: func.isRequired
 };
 
-export default Search;
+const mapStateToProps = state => ({
+  onSearch: state.onSearch
+});
+
+const mapDispatchToProps = dispatch => ({
+  search: itemId => dispatch(bookActions.searchBook(itemId))
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Search);

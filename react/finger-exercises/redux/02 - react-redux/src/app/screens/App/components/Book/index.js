@@ -1,8 +1,9 @@
-import React, { PureComponent } from 'react';
-import { func, bool, shape, string, number } from 'prop-types';
-import Button from '@components/Button';
+import React, { PureComponent } from "react";
+import { connect } from "react-redux";
+import { func, bool, shape, string, number } from "prop-types";
+import Button from "@components/Button";
 
-import styles from './styles.scss';
+import styles from "./styles.scss";
 
 class Book extends PureComponent {
   handleClick = () => {
@@ -19,12 +20,18 @@ class Book extends PureComponent {
 
   render() {
     const { data, configButton } = this.props;
+    console.log(data);
+    console.log(configButton);
     return (
       <div className={styles.bookItem}>
         <div className={styles.book}>
           <div className={styles.bookFront}>
             <div>
-              <img src={data.image} alt={data.name} className={styles.bookCover} />
+              <img
+                src={data.image}
+                alt={data.name}
+                className={styles.bookCover}
+              />
             </div>
             <div />
           </div>
@@ -64,4 +71,9 @@ Book.propTypes = {
   })
 };
 
-export default Book;
+const mapStateToProps = state => ({
+  data: state.data,
+  configButton: state.configButton 
+});
+
+export default connect(mapStateToProps)(Book);

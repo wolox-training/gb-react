@@ -3,6 +3,8 @@ import { func } from 'prop-types';
 import { bookSelectedPropType } from '@constants/propTypes';
 import Button from '@components/Button';
 
+import { actionsCreators as bookActions } from '../../../../../../../redux/book/actions';
+
 import styles from './styles.scss';
 
 class Item extends PureComponent {
@@ -41,4 +43,16 @@ Item.propTypes = {
   removeItem: func.isRequired
 };
 
-export default Item;
+const mapStateToProps = state => ({
+  item: state.item
+});
+
+const mapDispatchToProps = dispatch => ({
+  addItem: item => dispatch(bookActions.addItem(item)),
+  removeItem: itemId => dispatch(bookActions.removeItem(itemId))
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Button);
