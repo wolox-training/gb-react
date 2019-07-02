@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import SquareList from '../SquareList';
 import { boardRows } from '../../constants';
-
 import styles from '../../styles.module.scss';
 
 function Board({ squares, onClick }) {
