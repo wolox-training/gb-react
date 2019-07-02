@@ -64,7 +64,7 @@ class Game extends Component {
           />
         </div>
         <div className={styles.gameInfo}>
-          <div>{status}</div>
+          <span>{status}</span>
           <HistoryList
             history={history}
             onChangeHistory={this.handleJumpTo}
