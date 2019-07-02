@@ -9,9 +9,11 @@ function Board({ squares, onClick }) {
 
   return (
     <>
-      <SquareList boardRow={firstRow} squares={squares} onClick={onClick} />
-      <SquareList boardRow={secondRow} squares={squares} onClick={onClick} />
-      <SquareList boardRow={thirdRow} squares={squares} onClick={onClick} />
+      {boardRows.map((eachRow, rowIndex) =>
+        // Row indexs wont change within this matrix
+        // eslint-disable-next-line react/no-array-index-key
+        <SquareList key={rowIndex} boardRow={eachRow} squares={squares} onClick={onClick} />
+      )}
     </>
   );
 }
