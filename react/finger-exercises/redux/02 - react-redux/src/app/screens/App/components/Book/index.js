@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import { connect } from 'react-redux';
 import { func, bool, shape, string, number } from 'prop-types';
 import Button from '@components/Button';
 
@@ -20,8 +19,6 @@ class Book extends PureComponent {
 
   render() {
     const { data, configButton } = this.props;
-    console.log(data);
-    console.log(configButton);
     return (
       <div className={styles.bookItem}>
         <div className={styles.book}>
