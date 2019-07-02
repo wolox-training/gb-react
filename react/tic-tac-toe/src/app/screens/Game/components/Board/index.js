@@ -4,24 +4,28 @@ import PropTypes from 'prop-types';
 import SquareList from '../SquareList';
 import { boardRows } from '../../constants';
 
-function Board({ squares, onClick }) {
-  const [firstRow, secondRow, thirdRow] = boardRows;
+import styles from '../../styles.module.scss';
 
+function Board({ squares, onClick }) {
   return (
     <>
-      {boardRows.map((eachRow, rowIndex) =>
-        // Row indexs wont change within this matrix
-        // eslint-disable-next-line react/no-array-index-key
-        <SquareList key={rowIndex} boardRow={eachRow} squares={squares} onClick={onClick} />
-      )}
+      <div className={styles.game}>
+        <div className={styles.gameBoard}>
+          {boardRows.map((eachRow, rowIndex) =>
+            // Row indexs wont change within this matrix
+            // eslint-disable-next-line react/no-array-index-key
+            <SquareList key={rowIndex} boardRow={eachRow} squares={squares} onClick={onClick} />
+          )}
+        </div>
+      </div>
     </>
   );
 }
 
 
 Board.propTypes = {
-  squares: PropTypes.arrayOf(PropTypes.string),
-  onClick: PropTypes.func
+  squares: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onClick: PropTypes.func.isRequired
 };
 
 export default Board;

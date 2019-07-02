@@ -56,13 +56,11 @@ class Game extends Component {
     const status = winner ? `Winner: ${winner}` : `${player}'s turn`;
 
     return (
-      <div className={styles.game}>
-        <div className={styles.gameBoard}>
-          <Board
-            squares={current.squares}
-            onClick={this.handleClick}
-          />
-        </div>
+      <>
+        <Board
+          squares={current.squares}
+          onClick={this.handleClick}
+        />
         <div className={styles.gameInfo}>
           <span>{status}</span>
           <HistoryList
@@ -70,7 +68,7 @@ class Game extends Component {
             onChangeHistory={this.handleJumpTo}
           />
         </div>
-      </div>
+      </>
     );
   }
 }
