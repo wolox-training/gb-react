@@ -4,6 +4,8 @@ import store from '@redux/store';
 import Navbar from '@components/Navbar';
 import Footer from '@components/Footer';
 
+import { DATA as fakeBooks } from '../../../constants/data';
+
 import Book from './components/Book';
 import Search from './components/Search';
 import ShoppingCart from './components/ShoppingCart';
@@ -11,7 +13,7 @@ import styles from './styles.scss';
 
 class App extends Component {
   state = {
-    books: [],
+    books: fakeBooks,
     bookSelected: []
   };
 
@@ -20,20 +22,7 @@ class App extends Component {
       const { books, bookSelected } = store.getState();
       this.setState({ books, bookSelected });
     });
-    // TODO to implement the dispatch
   }
-
-  // TODO to implement the dispatch
-  onSearch = value => {};
-
-  // TODO to implement the dispatch
-  addToCart = item => {};
-
-  // TODO to implement the dispatch
-  addItem = itemId => {};
-
-  // TODO to implement the dispatch
-  removeItem = itemId => {};
 
   CONFIGURATION_BUTTON = {
     add: {
@@ -58,6 +47,7 @@ class App extends Component {
       <Provider store={store}>
         <Fragment>
           <Navbar />
+          <Book key={this.state.books[0].id} data={this.state.books[0]} configButton={undefined}/>
           <div className={styles.container}>
             <Search onSearch={this.onSearch} />
             {this.state.books.length ? (
