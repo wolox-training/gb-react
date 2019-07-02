@@ -47,7 +47,7 @@ class App extends Component {
       <Provider store={store}>
         <Fragment>
           <Navbar />
-          <Book key={this.state.books[0].id} data={this.state.books[0]} configButton={undefined}/>
+          <Book key={this.state.books[0].id} data={this.state.books[0]} configButton={undefined} />
           <div className={styles.container}>
             <Search onSearch={this.onSearch} />
             {this.state.books.length ? (
