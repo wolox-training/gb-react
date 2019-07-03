@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { DATA as fakeBooks } from '../../../../../constants/data';
+import actionsCreators from '../../../../../redux/book/actions';
 
 import styles from '././styles.scss';
 import Book from './../Book';
@@ -9,40 +9,29 @@ import ShoppingCart from './../ShoppingCart';
 
 class BooksList extends Component {
   state = {
-    books: fakeBooks,
     bookSelected: []
   };
 
-  CONFIGURATION_BUTTON = {
-    add: {
-      text: 'Add to cart',
-      function: this.addToCart
-    },
-    remove: {
-      text: 'Remove',
-      function: this.removeItem,
-      isDanger: true
-    }
-  };
+  componentDidMount() {
+    this.props.getBooks();
+  }
 
   renderBooks = item => {
-    const showButton = !this.state.bookSelected.some(el => el.id === item.id);
-    const configButton = showButton ? this.CONFIGURATION_BUTTON.add : this.CONFIGURATION_BUTTON.remove;
-    return <Book key={item.id} data={item} configButton={configButton} />;
+    return <Book key={item.id} data={item} />;
   };
 
   render() {
     return (
       <div>
-        {this.state.books.length ? (
-          this.state.books.map(this.renderBooks)
+        {this.props.books.length ? (
+          this.props.books.map(this.renderBooks)
         ) : (
           <div className={styles.noData}>
             <h2 className={styles.title}>No Data</h2>
           </div>
         )}
-        {this.state.bookSelected.length ? (
-          <ShoppingCart data={this.state.bookSelected} addItem={this.addItem} removeItem={this.removeItem} />
+        {this.props.bookSelected.length ? (
+          <ShoppingCart />
         ) : null}
       </div>
     );
@@ -51,7 +40,17 @@ class BooksList extends Component {
 
 const mapStateToProps = state => ({
   books: state.books,
-  originalBooks: state.originalBooks
+  originalBooks: state.originalBooks,
+  bookSelected: state.bookSelected
 });
 
-export default connect(mapStateToProps)(BooksList);
+const mapDispatchToProps = dispatch => ({
+  addItem: itemId => dispatch(actionsCreators.addItem(itemId)),
+  removeItem: itemId => dispatch(actionsCreators.removeItem(itemId)),
+  getBooks: () => dispatch(actionsCreators.getBooks())
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(BooksList);

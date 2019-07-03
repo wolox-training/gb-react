@@ -20,11 +20,6 @@ class ShoppingCart extends PureComponent {
 
   total = (accumulator, currentValue) => accumulator + currentValue.quantity;
 
-  renderItem = item => {
-    const { addItem, removeItem } = this.props;
-    return <Item key={item.id} item={item} addItem={addItem} removeItem={removeItem} />;
-  };
-
   render() {
     const { data } = this.props;
     return (
@@ -34,8 +29,12 @@ class ShoppingCart extends PureComponent {
         </Button>
         <div className={`${styles.container} ${this.state.open ? styles.open : ''}`}>
           <h1 className={styles.title}>Cart</h1>
-          <ul className={styles.content}>{data.map(this.renderItem)}</ul>
-          <h2 className={`${styles.title} ${styles.total}`}>Total: {data.reduce(this.total, 0)}</h2>
+          <ul className={styles.content}>
+            {data.map(item => (
+              <Item key={item.id} item={item} />
+            ))}
+          </ul>
+          <h2 className={`${styles.title} ${styles.total}`}>Total: {this.props.bookSelected.lenght}</h2>
         </div>
       </Fragment>
     );
@@ -49,9 +48,7 @@ ShoppingCart.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  data: state.data,
-  addItem: state.addItem,
-  removeItem: state.removeItem
+  data: state.bookSelected
 });
 
 export default connect(mapStateToProps)(ShoppingCart);

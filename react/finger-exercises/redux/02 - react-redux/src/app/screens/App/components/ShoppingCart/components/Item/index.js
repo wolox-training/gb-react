@@ -44,16 +44,9 @@ Item.propTypes = {
   removeItem: func.isRequired
 };
 
-const mapStateToProps = state => ({
-  item: state.item
-});
-
 const mapDispatchToProps = dispatch => ({
   addItem: item => dispatch(actionCreators.addItem(item)),
   removeItem: itemId => dispatch(actionCreators.removeItem(itemId))
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Button);
+export default connect(mapDispatchToProps)(Item);

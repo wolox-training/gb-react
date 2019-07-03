@@ -9,8 +9,8 @@ import { DATA } from '@constants/data';
 export const actions = {
   GET_BOOKS: '@@BOOK/GET_BOOKS',
   ADD_TO_CART: '@@BOOK/ADD_TO_CART',
-  ADD_ITEM: '@@BOOK/ADD_ITEM',
-  REMOVE_ITEM: '@@BOOK/REMOVE_ITEM',
+  ADD_ITEM_QUANTITY: '@@BOOK/ADD_ITEM_QUANTITY',
+  REMOVE_ITEM_FROM_CART: '@@BOOK/REMOVE_ITEM_FROM_CART',
   SEARCH_ITEM: '@@BOOK/SEARCH_ITEM'
 };
 
@@ -24,12 +24,12 @@ const actionsCreators = {
     payload: item
   }),
   addItem: itemId => ({
-    type: actions.ADD_ITEM,
+    type: actions.ADD_ITEM_QUANTITY,
     payload: itemId
   }),
-  removeItem: itemId => ({
-    type: actions.REMOVE_ITEM,
-    payload: itemId
+  removeItem: item => ({
+    type: actions.REMOVE_ITEM_FROM_CART,
+    payload: item
   }),
   searchBook: value => ({
     type: actions.SEARCH_ITEM,

@@ -8,7 +8,7 @@ import styles from './styles.scss';
 
 class Search extends Component {
   search = e => {
-    this.props.onSearch(e.target.value.toLowerCase());
+    this.props.search(e.target.value.toLowerCase());
   };
 
   render() {
@@ -17,7 +17,7 @@ class Search extends Component {
 }
 
 Search.propTypes = {
-  onSearch: func.isRequired
+  search: func.isRequired
 };
 
 const mapStateToProps = state => ({
