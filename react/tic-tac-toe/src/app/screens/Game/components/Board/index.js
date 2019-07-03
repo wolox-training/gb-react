@@ -7,17 +7,13 @@ import styles from '../../styles.module.scss';
 
 function Board({ squares, onClick }) {
   return (
-    <>
-      <div className={styles.game}>
-        <div className={styles.gameBoard}>
-          {boardRows.map((eachRow, rowIndex) =>
-            // Row indexs wont change within this matrix
-            // eslint-disable-next-line react/no-array-index-key
-            <SquareList key={rowIndex} boardRow={eachRow} squares={squares} onClick={onClick} />
-          )}
-        </div>
-      </div>
-    </>
+    <div className={styles.gameBoard}>
+      {boardRows.map((eachRow, rowIndex) =>
+        // Row indexs wont change within this matrix
+        // eslint-disable-next-line react/no-array-index-key
+        <SquareList key={rowIndex} boardRow={eachRow} squares={squares} onClick={onClick} />
+      )}
+    </div>
   );
 }
 
