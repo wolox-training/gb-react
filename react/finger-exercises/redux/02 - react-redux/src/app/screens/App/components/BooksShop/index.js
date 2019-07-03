@@ -1,13 +1,13 @@
 import React, { Component, Fragment } from 'react';
-import { connect } from 'redux-react';
+import { connect } from 'react-redux';
 import Navbar from '@components/Navbar';
 import Footer from '@components/Footer';
 
-import { DATA as fakeBooks } from '../../../constants/data';
+import { DATA as fakeBooks } from '../../../../../constants/data';
 
-import Book from './components/Book';
-import Search from './components/Search';
-import ShoppingCart from './components/ShoppingCart';
+import Book from './../Book';
+import Search from './../Search';
+import ShoppingCart from './../ShoppingCart';
 import styles from './styles.scss';
 
 class BooksShop extends Component {
@@ -38,7 +38,6 @@ class BooksShop extends Component {
     return (
       <Fragment>
         <Navbar />
-        <Book key={this.state.books[0].id} data={this.state.books[0]} configButton={undefined} />
         <div className={styles.container}>
           <Search onSearch={this.onSearch} />
           {this.state.books.length ? (
