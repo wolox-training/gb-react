@@ -1,0 +1,20 @@
+@import 'variables/variables';
+@import 'variables/colors';
+
+.no-data {
+  align-items: center;
+  color: $dusty-grey;
+  display: flex;
+  height: 62vh;
+  justify-content: center;
+}
+
+.title {
+  color: $dusty-grey;
+  font-size: 70px;
+  left: 0;
+  margin-top: $text-medium;
+  position: absolute;
+  right: 0;
+  text-align: center;
+}

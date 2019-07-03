@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import styles from './styles.scss';
+import { DATA as fakeBooks } from '../../../../../constants/data';
+
+import styles from '././styles.scss';
 import Book from './../Book';
 import ShoppingCart from './../ShoppingCart';
 
 class BooksList extends Component {
   state = {
-    books: [],
+    books: fakeBooks,
     bookSelected: []
   };
 
