@@ -20,9 +20,9 @@ function SquareList({ boardRow, squares, onClick }) {
 }
 
 SquareList.propTypes = {
-  boardRow: PropTypes.arrayOf(PropTypes.number),
-  squares: PropTypes.arrayOf(PropTypes.string),
-  onClick: PropTypes.func
+  boardRow: PropTypes.arrayOf(PropTypes.number).isRequired,
+  squares: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onClick: PropTypes.func.isRequired
 };
 
 export default SquareList;
