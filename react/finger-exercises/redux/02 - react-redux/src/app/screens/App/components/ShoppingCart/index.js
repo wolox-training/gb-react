@@ -6,6 +6,7 @@ import Button from '@components/Button';
 
 import Item from './components/Item';
 import styles from './styles.scss';
+import { ENETUNREACH } from 'constants';
 
 class ShoppingCart extends PureComponent {
   state = {
@@ -18,7 +19,13 @@ class ShoppingCart extends PureComponent {
     }));
   };
 
-  total = (accumulator, currentValue) => accumulator + currentValue.quantity;
+  total = () => {
+    const { bookSelected } = this.props;
+    return bookSelected.reduce(
+      (accum, current) => accum + current.amount,
+      0
+    );
+  };
 
   renderItems = item => <Item key={item.id} data={item} />;
 
@@ -32,7 +39,7 @@ class ShoppingCart extends PureComponent {
         <div className={`${styles.container} ${this.state.open ? styles.open : ''}`}>
           <h1 className={styles.title}>Cart</h1>
           <ul className={styles.content}>{bookSelected.map(this.renderItems)}</ul>
-          <h2 className={`${styles.title} ${styles.total}`}>Total: 0</h2>
+          <h2 className={`${styles.title} ${styles.total}`}>Total : {this.total()}</h2>
         </div>
       </Fragment>
     );
