@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { func, arrayOf } from 'prop-types';
+import { bookSelectedPropType } from '@constants/propTypes';
 
 import actionsCreators from '../../../../../redux/book/actions';
 
@@ -34,9 +36,14 @@ class BooksList extends Component {
   }
 }
 
+BooksList.propTypes = {
+  getBooks: func.isRequired,
+  books: arrayOf(bookSelectedPropType).isRequired,
+  bookSelected: arrayOf(bookSelectedPropType).isRequired
+};
+
 const mapStateToProps = state => ({
   books: state.books,
-  originalBooks: state.originalBooks,
   bookSelected: state.bookSelected
 });
 

@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { func, bool, shape, string, number } from 'prop-types';
+import { func, bool, shape, string, number, arrayOf } from 'prop-types';
+import { bookSelectedPropType } from '@constants/propTypes';
 import Button from '@components/Button';
 
 import actionsCreators from '../../../../../redux/book/actions';
@@ -61,7 +62,10 @@ Book.propTypes = {
     text: string.isRequired,
     function: func.isRequired,
     isDanger: bool
-  })
+  }),
+  bookSelected: arrayOf(bookSelectedPropType).isRequired,
+  addToCart: func.isRequired,
+  removeFromCart: func.isRequired
 };
 
 const mapStateToProps = state => ({

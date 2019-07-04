@@ -1,6 +1,6 @@
 import React, { PureComponent, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { arrayOf, func } from 'prop-types';
+import { arrayOf } from 'prop-types';
 import { bookSelectedPropType } from '@constants/propTypes';
 import Button from '@components/Button';
 
@@ -40,9 +40,7 @@ class ShoppingCart extends PureComponent {
 }
 
 ShoppingCart.propTypes = {
-  books: arrayOf(bookSelectedPropType).isRequired,
-  addItem: func.isRequired,
-  removeItem: func.isRequired
+  bookSelected: arrayOf(bookSelectedPropType).isRequired
 };
 
 const mapStateToProps = state => ({

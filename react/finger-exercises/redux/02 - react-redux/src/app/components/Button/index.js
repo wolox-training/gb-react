@@ -1,8 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { func, string, bool } from 'prop-types';
-
-import actionsCreators from '../../../redux/book/actions';
 
 import styles from './styles.scss';
 
