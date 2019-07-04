@@ -34,7 +34,7 @@ class ShoppingCart extends PureComponent {
               <Item key={item.id} item={item} />
             ))}
           </ul>
-          <h2 className={`${styles.title} ${styles.total}`}>Total: {this.props.bookSelected.lenght}</h2>
+          <h2 className={`${styles.title} ${styles.total}`}>Total: 0</h2>
         </div>
       </Fragment>
     );
