@@ -21,10 +21,7 @@ class ShoppingCart extends PureComponent {
 
   total = () => {
     const { bookSelected } = this.props;
-    return bookSelected.reduce(
-      (accum, current) => accum + current.amount,
-      0
-    );
+    return bookSelected.reduce((accum, current) => accum + current.amount, 0);
   };
 
   renderItems = item => <Item key={item.id} data={item} />;
