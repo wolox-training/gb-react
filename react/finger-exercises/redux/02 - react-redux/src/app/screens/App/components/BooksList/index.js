@@ -16,9 +16,7 @@ class BooksList extends Component {
     this.props.getBooks();
   }
 
-  renderBooks = item => {
-    return <Book key={item.id} data={item} />;
-  };
+  renderBooks = item => <Book key={item.id} data={item} />;
 
   render() {
     return (
@@ -30,9 +28,7 @@ class BooksList extends Component {
             <h2 className={styles.title}>No Data</h2>
           </div>
         )}
-        {this.props.bookSelected.length ? (
-          <ShoppingCart />
-        ) : null}
+        {this.props.bookSelected.length ? <ShoppingCart /> : null}
       </div>
     );
   }
@@ -45,8 +41,6 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  addItem: itemId => dispatch(actionsCreators.addItem(itemId)),
-  removeItem: itemId => dispatch(actionsCreators.removeItem(itemId)),
   getBooks: () => dispatch(actionsCreators.getBooks())
 });
 

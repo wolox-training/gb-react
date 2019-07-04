@@ -23,9 +23,9 @@ const actionsCreators = {
     type: actions.ADD_TO_CART,
     payload: item
   }),
-  addItem: itemId => ({
+  addItem: item => ({
     type: actions.ADD_ITEM_QUANTITY,
-    payload: itemId
+    payload: item
   }),
   removeItem: item => ({
     type: actions.REMOVE_ITEM_FROM_CART,

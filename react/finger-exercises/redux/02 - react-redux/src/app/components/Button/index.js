@@ -21,9 +21,4 @@ Button.propTypes = {
   className: string
 };
 
-const mapDispatchToProps = dispatch => ({
-  addToCart: book => dispatch(actionsCreators.addToCart(book)),
-  removeFromCart: book => dispatch(actionsCreators.removeItem(book))
-});
-
-export default connect(mapDispatchToProps)(Button);
+export default Button;

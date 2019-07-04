@@ -15,7 +15,7 @@ class Book extends PureComponent {
     const action = showButton ? addToCart : removeFromCart;
 
     action(this.props.data);
-  }
+  };
 
   render() {
     const { data, bookSelected } = this.props;
