@@ -4,16 +4,16 @@ import PropTypes from 'prop-types';
 import styles from './styles.module.scss';
 
 
-function MatchHistoryEntry({ singleEntry }) {
+function MatchHistoryEntry({ matchEntry }) {
   return (
     <div className={styles.matchHistoryEntry}>
-      {singleEntry}
+      {matchEntry}
     </div>
   );
 }
 
 MatchHistoryEntry.propTypes = {
-  singleEntry: PropTypes.isRequired
+  matchEntry: PropTypes.isRequired
 };
 
 export default MatchHistoryEntry;

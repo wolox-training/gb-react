@@ -16,7 +16,6 @@ function Board({ squares, onClick }) {
   );
 }
 
-
 Board.propTypes = {
   squares: PropTypes.arrayOf(PropTypes.string),
   onClick: PropTypes.func
