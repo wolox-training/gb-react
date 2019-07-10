@@ -7,13 +7,13 @@ function MatchHistoryEntry({ matchEntry }) {
   return (
     <div className={styles.matchContainer}>
       <div className={styles.matchEntry}>
-        First Player: {matchEntry.firstPlayer}
+        {matchEntry.firstPlayer}
       </div>
       <div className={styles.matchEntry}>
-        Second Player: {matchEntry.secondPlayer}
+        {matchEntry.secondPlayer}
       </div>
       <div className={styles.matchEntry}>
-        Winner: {matchEntry.winner}
+        {matchEntry.winner}
       </div>
     </div>
   );

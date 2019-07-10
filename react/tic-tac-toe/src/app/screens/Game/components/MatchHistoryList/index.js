@@ -7,6 +7,7 @@ import MatchesService from '../../../../../services/matchesService';
 import actionsCreators from '../../../../../redux/tictactoe/actions';
 import { parseMatchesResponse } from '../../../../../utils/mappers';
 
+import styles from './components/MatchHistoryEntry/styles.module.scss';
 import MatchHistoryEntry from './components/MatchHistoryEntry';
 
 
@@ -17,9 +18,24 @@ class MatchHistoryList extends Component {
 
   render() {
     const { historicEntries } = this.props;
-    return historicEntries.map(matchEntry => (
-      <MatchHistoryEntry key={matchEntry.date} matchEntry={matchEntry} />
-    ));
+    return (
+      <>
+        <div className={styles.matchContainer}>
+          <div className={styles.matchEntry}>
+            First Player
+          </div>
+          <div className={styles.matchEntry}>
+            Second Player
+          </div>
+          <div className={styles.matchEntry}>
+            Winner
+          </div>
+        </div>
+        {historicEntries.map(matchEntry => (
+          <MatchHistoryEntry key={matchEntry.date} matchEntry={matchEntry} />
+        ))}
+    </>
+    );
   }
 }
 
