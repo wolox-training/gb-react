@@ -1,11 +1,11 @@
-.matchContainer {
-  background-color: grey;
-  display: flex;
-  flex-direction: row;
-  margin: 0 40px 0;
-}
-
 .matchEntry {
   font-size: 14px;
   margin-right: 20px;
+}
+
+.matchEntryContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 5px;
 }

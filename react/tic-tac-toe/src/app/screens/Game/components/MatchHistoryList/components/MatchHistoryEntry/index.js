@@ -5,7 +5,7 @@ import styles from './styles.module.scss';
 
 function MatchHistoryEntry({ matchEntry }) {
   return (
-    <div className={styles.matchContainer}>
+    <div className={styles.matchEntryContainer}>
       <div className={styles.matchEntry}>
         {matchEntry.firstPlayer}
       </div>
