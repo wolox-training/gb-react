@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import Spinner from 'react-spinkit';
 
 import MatchesService from '../../../../../services/matchesService';
 import actionsCreators from '../../../../../redux/tictactoe/actions';
@@ -17,15 +18,19 @@ class MatchHistoryList extends Component {
   }
 
   render() {
-    const { historicEntries } = this.props;
-    return (
-      <div className={styles.matchContainer}>
-        <MatchHistoryHeader />
-        {historicEntries.map(matchEntry => (
-          <MatchHistoryEntry key={matchEntry.date} matchEntry={matchEntry} c />
-        ))}
-      </div>
-    );
+    const { historicEntries, loading } = this.props;
+    return loading ? <Spinner name="circle" />
+      : (
+        <div className={styles.matchContainer}>
+          <MatchHistoryHeader />
+          {historicEntries.map(matchEntry => (
+            <MatchHistoryEntry
+              key={matchEntry.date}
+              matchEntry={matchEntry}
+            />
+          ))}
+        </div>
+      );
   }
 }
 
@@ -37,20 +42,25 @@ MatchHistoryList.propTypes = {
       secondPlayer: PropTypes.string,
       winner: PropTypes.string
     })
-  ).isRequired
+  ).isRequired,
+  loading: PropTypes.bool.isRequired
 };
 
 const mapStateToProps = state => ({
-  historicEntries: state.matchesHistory
+  historicEntries: state.matchesHistory,
+  loading: state.matchHistoryLoading
 });
 
 const mapDispatchToProps = dispatch => ({
   getHistoric: async () => {
+    dispatch(actionsCreators.getHistoricLoading());
     const response = await MatchesService.getHistoric();
-    const { data } = response;
-    const parsedResponse = data.map(parseMatchesResponse);
     if (response.ok) {
+      const { data } = response;
+      const parsedResponse = data.map(parseMatchesResponse);
       dispatch(actionsCreators.getHistoric(parsedResponse));
+    } else {
+      dispatch(actionsCreators.getHistoricError(response.error));
     }
   }
 });
