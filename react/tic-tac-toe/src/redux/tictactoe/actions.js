@@ -7,8 +7,8 @@ const actionsCreators = {
     type: actions.GET_HISTORIC,
     payload: data
   }),
-  requestError: error => ({
-    type: actions.REQUEST_ERROR,
+  getHistoricError: error => ({
+    type: actions.GET_HISTORIC_ERROR,
     payload: error
   })
 };

@@ -63,12 +63,10 @@ class Game extends Component {
         <div className={styles.game}>
           <Board squares={current.squares} onClick={this.handleClick} />
           <div className={styles.gameInfo}>
-            <div>{status}</div>
+            <span>{status}</span>
             <HistoryList history={history} onChangeHistory={this.handleJumpTo} />
           </div>
-          <div>
-            <MatchHistoryList />
-          </div>
+          <MatchHistoryList />
         </div>
       </Provider>
     );
