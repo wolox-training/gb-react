@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { get } from 'lodash';
 
 import MatchesService from '../../../../../services/matchesService';
 import actionsCreators from '../../../../../redux/tictactoe/actions';
@@ -48,7 +47,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   getHistoric: async () => {
     const response = await MatchesService.getHistoric();
-    const data = get(response, 'data');
+    const { data } = response;
     const parsedResponse = data.map(parseMatchesResponse);
     if (response.ok) {
       dispatch(actionsCreators.getHistoric(parsedResponse));
