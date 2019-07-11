@@ -21,9 +21,9 @@ class MatchHistoryList extends Component {
     const { historicEntries } = this.props;
     return (
       <div className={styles.matchContainer}>
-        <MatchHistoryHeader></MatchHistoryHeader>
+        <MatchHistoryHeader />
         {historicEntries.map(matchEntry => (
-          <MatchHistoryEntry key={matchEntry.date} matchEntry={matchEntry} c/>
+          <MatchHistoryEntry key={matchEntry.date} matchEntry={matchEntry} c />
         ))}
       </div>
     );

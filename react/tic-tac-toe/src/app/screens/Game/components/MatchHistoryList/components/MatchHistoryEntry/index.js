@@ -6,17 +6,25 @@ import styles from './styles.module.scss';
 function MatchHistoryEntry({ matchEntry }) {
   return (
     <div className={styles.matchEntryContainer}>
-      <div className={styles.matchEntry}>
+      <span className={styles.matchEntry}>
         {matchEntry.firstPlayer}
-      </div>
-      <div className={styles.matchEntry}>
+      </span>
+      <span className={styles.matchEntry}>
         {matchEntry.secondPlayer}
-      </div>
-      <div className={styles.matchEntry}>
+      </span>
+      <span className={styles.matchEntry}>
         {matchEntry.winner}
-      </div>
+      </span>
     </div>
   );
 }
+
+MatchHistoryEntry.propTypes = {
+  matchEntry: PropTypes.objectOf(PropTypes.shape({
+    firstPlayer: PropTypes.string,
+    secondPlayer: PropTypes.string,
+    winner: PropTypes.string
+  }))
+};
 
 export default MatchHistoryEntry;

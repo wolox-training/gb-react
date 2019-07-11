@@ -5,9 +5,9 @@ import styles from './styles.module.scss';
 function MatchHistoryHeader() {
   return (
     <div className={styles.matchHeader}>
-      <span className={styles.matchHeaderDescription}>First Player</span>
-      <span className={styles.matchHeaderDescription}>Second Player</span>
-      <span className={styles.matchHeaderDescription}>Winner</span>
+      <h2 className={styles.matchHeaderDescription}>First Player</h2>
+      <h2 className={styles.matchHeaderDescription}>Second Player</h2>
+      <h2 className={styles.matchHeaderDescription}>Winner</h2>
     </div>
   );
 }

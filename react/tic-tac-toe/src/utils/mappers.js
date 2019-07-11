@@ -7,7 +7,6 @@ const getWinner = matchResult => {
 
 exports.parseMatchesResponse = raw => {
   const matchWinner = getWinner(raw);
-  console.log('MATCH WINNER: ', matchWinner);
   return {
     firstPlayer: raw.player_one,
     secondPlayer: raw.player_two,
