@@ -61,9 +61,7 @@ class Game extends Component {
     return (
       <Provider store={store}>
         <div className={styles.game}>
-          <div className={styles.gameBoard}>
-            <Board squares={current.squares} onClick={this.handleClick} />
-          </div>
+          <Board squares={current.squares} onClick={this.handleClick} />
           <div className={styles.gameInfo}>
             <div>{status}</div>
             <HistoryList history={history} onChangeHistory={this.handleJumpTo} />
