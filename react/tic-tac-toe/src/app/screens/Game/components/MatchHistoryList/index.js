@@ -32,7 +32,13 @@ class MatchHistoryList extends Component {
 
 MatchHistoryList.propTypes = {
   getHistoric: PropTypes.func.isRequired,
-  historicEntries: PropTypes.arrayOf(PropTypes.object).isRequired
+  historicEntries: PropTypes.arrayOf(
+    PropTypes.shape({
+      firstPlayer: PropTypes.string,
+      secondPlayer: PropTypes.string,
+      winner: PropTypes.string
+    })
+  ).isRequired
 };
 
 const mapStateToProps = state => ({
