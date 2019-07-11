@@ -20,11 +20,11 @@ function MatchHistoryEntry({ matchEntry }) {
 }
 
 MatchHistoryEntry.propTypes = {
-  matchEntry: PropTypes.objectOf(PropTypes.shape({
+  matchEntry: PropTypes.shape({
     firstPlayer: PropTypes.string,
     secondPlayer: PropTypes.string,
     winner: PropTypes.string
-  }))
+  })
 };
 
 export default MatchHistoryEntry;
