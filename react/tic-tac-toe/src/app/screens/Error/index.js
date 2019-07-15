@@ -1,7 +1,11 @@
-import { React } from 'react';
+import React, { Component } from 'react';
 
-function Error() {
-  return <p>Page does not exist</p>;
+class Error extends Component {
+  handleError = () => 1;
+
+  render() {
+    return <p>Incorrect URL</p>;
+  }
 }
 
 export default Error;
