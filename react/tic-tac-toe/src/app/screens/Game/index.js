@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import { Provider } from 'react-redux';
+
+import store from '../../../redux/store';
 
 import styles from './styles.module.scss';
 import Board from './components/Board';
 import HistoryList from './components/HistoryList';
+import MatchHistoryList from './components/MatchHistoryList';
 import calculateWinner from './utils';
-
 
 class Game extends Component {
   state = {
@@ -56,21 +59,16 @@ class Game extends Component {
     const status = winner ? `Winner: ${winner}` : `${player}'s turn`;
 
     return (
-      <div className={styles.game}>
-        <div className={styles.gameBoard}>
-          <Board
-            squares={current.squares}
-            onClick={this.handleClick}
-          />
+      <Provider store={store}>
+        <div className={styles.game}>
+          <Board squares={current.squares} onClick={this.handleClick} />
+          <div className={styles.gameInfo}>
+            <span>{status}</span>
+            <HistoryList history={history} onChangeHistory={this.handleJumpTo} />
+          </div>
+          <MatchHistoryList />
         </div>
-        <div className={styles.gameInfo}>
-          <div>{status}</div>
-          <HistoryList
-            history={history}
-            onChangeHistory={this.handleJumpTo}
-          />
-        </div>
-      </div>
+      </Provider>
     );
   }
 }
