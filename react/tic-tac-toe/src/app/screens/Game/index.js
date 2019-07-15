@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { Provider } from 'react-redux';
-
-import store from '../../../redux/store';
 
 import styles from './styles.module.scss';
 import Board from './components/Board';
@@ -59,16 +56,14 @@ class Game extends Component {
     const status = winner ? `Winner: ${winner}` : `${player}'s turn`;
 
     return (
-      <Provider store={store}>
-        <div className={styles.game}>
-          <Board squares={current.squares} onClick={this.handleClick} />
-          <div className={styles.gameInfo}>
-            <span>{status}</span>
-            <HistoryList history={history} onChangeHistory={this.handleJumpTo} />
-          </div>
-          <MatchHistoryList />
+      <div className={styles.game}>
+        <Board squares={current.squares} onClick={this.handleClick} />
+        <div className={styles.gameInfo}>
+          <span>{status}</span>
+          <HistoryList history={history} onChangeHistory={this.handleJumpTo} />
         </div>
-      </Provider>
+        <MatchHistoryList />
+      </div>
     );
   }
 }
