@@ -1,10 +1,12 @@
 import React, { PureComponent, Fragment } from 'react';
-import { arrayOf, func } from 'prop-types';
+import { connect } from 'react-redux';
+import { arrayOf } from 'prop-types';
 import { bookSelectedPropType } from '@constants/propTypes';
 import Button from '@components/Button';
 
 import Item from './components/Item';
 import styles from './styles.scss';
+import { ENETUNREACH } from 'constants';
 
 class ShoppingCart extends PureComponent {
   state = {
@@ -17,15 +19,15 @@ class ShoppingCart extends PureComponent {
     }));
   };
 
-  total = (accumulator, currentValue) => accumulator + currentValue.quantity;
-
-  renderItem = item => {
-    const { addItem, removeItem } = this.props;
-    return <Item key={item.id} item={item} addItem={addItem} removeItem={removeItem} />;
+  total = () => {
+    const { bookSelected } = this.props;
+    return bookSelected.reduce((accum, current) => accum + current.amount, 0);
   };
 
+  renderItems = item => <Item key={item.id} data={item} />;
+
   render() {
-    const { data } = this.props;
+    const { bookSelected } = this.props;
     return (
       <Fragment>
         <Button className={styles.buttonCart} onClick={this.toggleContent}>
@@ -33,8 +35,8 @@ class ShoppingCart extends PureComponent {
         </Button>
         <div className={`${styles.container} ${this.state.open ? styles.open : ''}`}>
           <h1 className={styles.title}>Cart</h1>
-          <ul className={styles.content}>{data.map(this.renderItem)}</ul>
-          <h2 className={`${styles.title} ${styles.total}`}>Total: {data.reduce(this.total, 0)}</h2>
+          <ul className={styles.content}>{bookSelected.map(this.renderItems)}</ul>
+          <h2 className={`${styles.title} ${styles.total}`}>Total : {this.total()}</h2>
         </div>
       </Fragment>
     );
@@ -42,9 +44,11 @@ class ShoppingCart extends PureComponent {
 }
 
 ShoppingCart.propTypes = {
-  data: arrayOf(bookSelectedPropType).isRequired,
-  addItem: func.isRequired,
-  removeItem: func.isRequired
+  bookSelected: arrayOf(bookSelectedPropType).isRequired
 };
 
-export default ShoppingCart;
+const mapStateToProps = state => ({
+  bookSelected: state.bookSelected
+});
+
+export default connect(mapStateToProps)(ShoppingCart);
