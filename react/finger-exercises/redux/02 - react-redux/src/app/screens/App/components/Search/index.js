@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { func } from 'prop-types';
+
+import actionCreators from '../../../../../redux/book/actions';
 
 import styles from './styles.scss';
 
 class Search extends Component {
   search = e => {
-    this.props.onSearch(e.target.value.toLowerCase());
+    this.props.search(e.target.value.toLowerCase());
   };
 
   render() {
@@ -14,7 +17,18 @@ class Search extends Component {
 }
 
 Search.propTypes = {
-  onSearch: func.isRequired
+  search: func.isRequired
 };
 
-export default Search;
+const mapStateToProps = state => ({
+  onSearch: state.onSearch
+});
+
+const mapDispatchToProps = dispatch => ({
+  search: itemId => dispatch(actionCreators.searchBook(itemId))
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Search);
