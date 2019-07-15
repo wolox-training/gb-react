@@ -1,17 +1,10 @@
 .login-container {
   display: flex;
   flex-direction: column;
-  align-content: space-between;
 }
 
 .login-title {
   font-weight: bold;
   font-size: 20px;
   color: black;
-}
-
-.user-info {
-  border: 2px solid black;
-  margin: 10px;
-  padding: 10px;
 }

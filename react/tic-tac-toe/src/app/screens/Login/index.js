@@ -1,37 +1,30 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
+import PropTypes from 'prop-types';
 
 import styles from './styles.module.scss';
+import LoginInput from './components/LoginInput';
 
-class Login extends Component {
-  handleSubmit = () => 1;
+function Login() {
+  // const { handleSubmit } = props;
 
-  render() {
-    return (
-      <div className={styles.loginContainer}>
-        <h1 className={styles.loginTitle}>Login</h1>
-        <form>
-          <label>Email</label>
-          <Field
-            name="Email"
-            component="input"
-            type="text"
-            placeholder="Email"
-            class={styles.userInfo}
-          />
-          <label>Password</label>
-          <Field
-            name="Password"
-            component="input"
-            type="text"
-            placeholder="Password"
-            class={styles.userInfo}
-          />
-        </form>
-      </div>
-    );
-  }
+  return (
+    <div className={styles.loginContainer}>
+      <h1 className={styles.loginTitle}>Login</h1>
+      <form>
+        <label>Email</label>
+        <Field component={LoginInput} />
+        <label>Password</label>
+        <Field component={LoginInput} />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  );
 }
+
+Login.propTypes = {
+  handleSubmit: PropTypes.func.isRequired
+};
 
 export default reduxForm({
   form: 'login'
