@@ -11,7 +11,6 @@ import styles from './styles.module.scss';
 import MatchHistoryHeader from './components/MatchHistoryHeader';
 import MatchHistoryEntry from './components/MatchHistoryEntry';
 
-
 class MatchHistoryList extends Component {
   componentDidMount() {
     this.props.getHistoric();
@@ -19,18 +18,16 @@ class MatchHistoryList extends Component {
 
   render() {
     const { historicEntries, loading } = this.props;
-    return loading ? <Spinner name="circle" />
-      : (
-        <div className={styles.matchContainer}>
-          <MatchHistoryHeader />
-          {historicEntries.map(matchEntry => (
-            <MatchHistoryEntry
-              key={matchEntry.date}
-              matchEntry={matchEntry}
-            />
-          ))}
-        </div>
-      );
+    return loading ? (
+      <Spinner name="circle" />
+    ) : (
+      <div className={styles.matchContainer}>
+        <MatchHistoryHeader />
+        {historicEntries.map(matchEntry => (
+          <MatchHistoryEntry key={matchEntry.date} matchEntry={matchEntry} />
+        ))}
+      </div>
+    );
   }
 }
 
@@ -47,8 +44,8 @@ MatchHistoryList.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  historicEntries: state.matchesHistory,
-  loading: state.matchHistoryLoading
+  historicEntries: state.gameReducer.matchesHistory,
+  loading: state.gameReducer.matchHistoryLoading
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -65,5 +62,7 @@ const mapDispatchToProps = dispatch => ({
   }
 });
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(MatchHistoryList);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(MatchHistoryList);
