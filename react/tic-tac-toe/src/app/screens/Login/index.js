@@ -2,11 +2,18 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
 
+import actionCreators from '../../../redux/users/actions';
+
 import styles from './styles.module.scss';
 import LoginInput from './components/LoginInput';
 
 class Login extends Component {
-  handleSubmit = () => 1;
+  handleSubmit = submitted => {
+    this.props.dispatch(actionCreators.logIn({
+      email: submitted.email,
+      password: submitted.password
+    }));
+  };
 
   render() {
     return (
@@ -27,7 +34,6 @@ class Login extends Component {
 }
 
 Login.propTypes = {
-  // eslint-disable-next-line react/no-unused-prop-types
   handleSubmit: PropTypes.func.isRequired
 };
 

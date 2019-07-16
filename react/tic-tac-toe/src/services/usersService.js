@@ -1,5 +1,5 @@
 import api from '../config/api';
 
 export default {
-  userLogin: () => api.post('/login')
+  userLogin: (data) => api.post('/login')
 };

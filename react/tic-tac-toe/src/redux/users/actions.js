@@ -1,15 +1,11 @@
 export const actions = {
-  LOGIN: '@@USERS/LOGIN_SUCCESS',
-  LOGIN_ERROR: '@@USERS/LOGIN_ERROR'
+  LOGIN: '@@USERS/LOGIN_SUCCESS'
 };
 
 const actionsCreators = {
   login: data => ({
     type: actions.LOGIN,
     payload: data
-  }),
-  loginError: () => ({
-    type: actions.LOGIN
   })
 };
 
