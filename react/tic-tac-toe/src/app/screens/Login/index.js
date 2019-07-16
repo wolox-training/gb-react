@@ -12,16 +12,17 @@ class Login extends Component {
     return (
       <div className={styles.loginContainer}>
         <h1 className={styles.loginTitle}>Login</h1>
-        <form styles={styles.loginForm} onSubmit={this.handleSubmit}>
+        <form className={styles.loginForm} onSubmit={this.handleSubmit}>
           <label className={styles.loginDetail}>Email</label>
-          <Field component={LoginInput} placeholder="Email" />
+          <Field component={LoginInput} />
           <label className={styles.loginDetail}>Password</label>
-          <Field component={LoginInput} placerholder="Password" />
+          <Field component={LoginInput} />
           <button type="submit" className={styles.loginSubmitButton}>
             Submit
           </button>
         </form>
-      </div>);
+      </div>
+    );
   }
 }
 

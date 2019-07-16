@@ -6,7 +6,7 @@ function LoginInput({ placeholder }) {
   return (
     <>
       <input
-        className={styles.userInput}
+        className={styles.loginInput}
         placeholder={placeholder}
       />
     </>
