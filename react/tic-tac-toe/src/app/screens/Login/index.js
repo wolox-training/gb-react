@@ -5,24 +5,28 @@ import PropTypes from 'prop-types';
 import styles from './styles.module.scss';
 import LoginInput from './components/LoginInput';
 
-function Login() {
-  // const { handleSubmit } = props;
+class Login extends Component {
+  handleSubmit = () => 1;
 
-  return (
-    <div className={styles.loginContainer}>
-      <h1 className={styles.loginTitle}>Login</h1>
-      <form>
-        <label>Email</label>
-        <Field component={LoginInput} />
-        <label>Password</label>
-        <Field component={LoginInput} />
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-  );
+  render() {
+    return (
+      <div className={styles.loginContainer}>
+        <h1 className={styles.loginTitle}>Login</h1>
+        <form styles={styles.loginForm} onSubmit={this.handleSubmit}>
+          <label className={styles.loginDetail}>Email</label>
+          <Field component={LoginInput} placeholder="Email" />
+          <label className={styles.loginDetail}>Password</label>
+          <Field component={LoginInput} placerholder="Password" />
+          <button type="submit" className={styles.loginSubmitButton}>
+            Submit
+          </button>
+        </form>
+      </div>);
+  }
 }
 
 Login.propTypes = {
+  // eslint-disable-next-line react/no-unused-prop-types
   handleSubmit: PropTypes.func.isRequired
 };
 
