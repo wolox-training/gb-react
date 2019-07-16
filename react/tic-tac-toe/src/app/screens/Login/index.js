@@ -1,42 +1,20 @@
 import React, { Component } from 'react';
-import { Field, reduxForm } from 'redux-form';
-import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-import actionCreators from '../../../redux/users/actions';
+import actionsCreators from '../../../redux/users/actions';
 
-import styles from './styles.module.scss';
-import LoginInput from './components/LoginInput';
+import Login from './layout';
 
-class Login extends Component {
-  handleSubmit = submitted => {
-    this.props.dispatch(actionCreators.logIn({
-      email: submitted.email,
-      password: submitted.password
-    }));
-  };
-
+class LoginContainer extends Component {
   render() {
-    return (
-      <div className={styles.loginContainer}>
-        <h1 className={styles.loginTitle}>Login</h1>
-        <form className={styles.loginForm} onSubmit={this.handleSubmit}>
-          <label className={styles.loginDetail}>Email</label>
-          <Field component={LoginInput} />
-          <label className={styles.loginDetail}>Password</label>
-          <Field component={LoginInput} />
-          <button type="submit" className={styles.loginSubmitButton}>
-            Submit
-          </button>
-        </form>
-      </div>
-    );
+    return <Login onSubmit={this.handleSubmit} />;
   }
 }
 
-Login.propTypes = {
-  handleSubmit: PropTypes.func.isRequired
-};
+const mapDispatchToProps = dispatch => ({
+  handleSubmit: (email, password) => {
+    dispatch(actionsCreators.logIn({ email, password }));
+  }
+});
 
-export default reduxForm({
-  form: 'login'
-})(Login);
+export default connect(null, mapDispatchToProps)(LoginContainer);

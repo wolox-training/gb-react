@@ -1,7 +1,7 @@
 import { createStore, compose, combineReducers } from 'redux';
+import { reducer as form } from 'redux-form';
 
 import gameReducer from './tictactoe/reducer';
-import form from './users/reducer';
 
 // eslint-disable-next-line no-underscore-dangle
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

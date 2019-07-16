@@ -1,13 +1,15 @@
 import { actions } from './actions';
 
-const initialState = {};
+const initialState = {
+  user: null
+};
 
 function reducer(state = initialState, action) {
   switch (action.type) {
     case actions.LOGIN:
       return {
         ...state,
-        userInfo: action.payload
+        user: action.payload
       };
     default:
       return state;

@@ -2,14 +2,18 @@ import React from 'react';
 
 import styles from './styles.module.scss';
 
-function LoginInput({ placeholder }) {
+function LoginInput({ input, label, type, meta: { error, submitFailed } }) {
   return (
-    <>
+    <div>
+      <label>{label}</label>
       <input
+        {...input}
+        placeholder={label}
+        type={type}
         className={styles.loginInput}
-        placeholder={placeholder}
       />
-    </>
+      {submitFailed && error && <span>{error}</span>}
+    </div>
   );
 }
 
