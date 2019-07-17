@@ -10,7 +10,7 @@ const actionsCreators = {
   login: userData => async dispatch => {
     const response = await usersService.userLogin(userData);
     if (response.ok) {
-      dispatch({ type: actions.LOGIN_SUCCESS, payload: response });
+      dispatch({ type: actions.LOGIN_SUCCESS, payload: response.data });
     } else {
       dispatch({ type: actions.LOGIN_ERROR, payload: response });
     }
