@@ -14,13 +14,11 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
-        <>
-          <Switch>
-            <Route exact path="/" component={Login} />
-            <Route exact path="/game" component={Game} />
-            <Route exact component={Error} />
-          </Switch>
-        </>
+        <Switch>
+          <Route exact path="/" component={Login} />
+          <Route exact path="/game" component={Game} />
+          <Route exact component={Error} />
+        </Switch>
       </Router>
     </Provider>
   );
