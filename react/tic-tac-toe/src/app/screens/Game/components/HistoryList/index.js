@@ -19,7 +19,11 @@ function HistoryList({ history, onChangeHistory }) {
 
 HistoryList.propTypes = {
   history: PropTypes.arrayOf(PropTypes.shape({
-    squares: PropTypes.array
+    squares: PropTypes.arrayOf(PropTypes.shape({
+      index: PropTypes.number,
+      value: PropTypes.string,
+      onClick: PropTypes.func
+    }))
   })),
   onChangeHistory: PropTypes.func
 };
