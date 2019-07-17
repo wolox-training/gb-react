@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import styles from './styles.module.scss';
 import LoginInput from './components/LoginInput';
-import { hasLenght, isRequired, isValidEmail } from './Validations';
+import { hasLength, isRequired, isValidEmail } from './Validations';
 
 function Login({ handleSubmit }) {
   return (
@@ -25,7 +25,7 @@ function Login({ handleSubmit }) {
           type="text"
           label="Password"
           component={LoginInput}
-          validate={[isRequired, hasLenght]}
+          validate={[isRequired, hasLength]}
         />
         <button type="submit" className={styles.loginSubmitButton}>
           Submit

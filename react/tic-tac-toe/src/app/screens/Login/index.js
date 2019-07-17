@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import actionsCreators from '../../../redux/users/actions';
 
@@ -7,12 +8,10 @@ import Login from './layout';
 
 class LoginContainer extends Component {
   handleSubmit = submitted => {
-    this.props.dispatch(
-      actionsCreators.logIn({
-        email: submitted.email,
-        password: submitted.password
-      })
-    );
+    this.props.login({
+      email: submitted.email,
+      password: submitted.password
+    });
   };
 
   render() {
@@ -20,10 +19,16 @@ class LoginContainer extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  handleSubmit: (email, password) => {
-    dispatch(actionsCreators.logIn({ email, password }));
-  }
+LoginContainer.propTypes = {
+  login: PropTypes.func.isRequired
+};
+
+const mapStateToProps = state => ({
+  userToken: state.userToken
 });
 
-export default connect(null, mapDispatchToProps)(LoginContainer);
+const mapDispatchToProps = dispatch => ({
+  login: userData => dispatch(actionsCreators.login(userData))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginContainer);
