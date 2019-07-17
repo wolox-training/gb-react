@@ -6,12 +6,12 @@
 
 .match-entry-container {
   border: 2px solid black;
-  display: flex;
   justify-content: space-between;
   margin-bottom: 5px;
   padding: 5px;
 }
 
 .row {
+  display: flex;
   flex-direction: row;
 }

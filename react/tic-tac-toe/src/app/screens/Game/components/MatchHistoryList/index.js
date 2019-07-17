@@ -21,7 +21,7 @@ class MatchHistoryList extends Component {
     return loading ? (
       <Spinner name="circle" />
     ) : (
-      <div className={styles.matchContainer}>
+      <div className={`${styles.column} ${styles.matchContainer}`}>
         <MatchHistoryHeader />
         {historicEntries.map(matchEntry => (
           <MatchHistoryEntry key={matchEntry.date} matchEntry={matchEntry} />
