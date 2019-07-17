@@ -5,7 +5,7 @@ const getWinner = matchResult => {
   return matchResult.winner === 'player_one' ? matchResult.player_one : matchResult.player_two;
 };
 
-exports.parseMatchesResponse = raw => {
+export const parseMatchesResponse = raw => {
   const matchWinner = getWinner(raw);
   return {
     firstPlayer: raw.player_one,
