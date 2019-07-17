@@ -9,25 +9,13 @@ import LoginInput from './components/LoginInput';
 
 function Login({ handleSubmit }) {
   return (
-    <div className={`${styles.column} ${styles.middle}`}>
+    <div className="column middle">
       <h1 className={styles.loginTitle}>Login</h1>
-      <Form className={`${styles.column} ${styles.middle}`} onSubmit={handleSubmit}>
+      <Form className="column middle" onSubmit={handleSubmit}>
         <label className={styles.loginDetail}>Email</label>
-        <Field
-          name="email"
-          type="text"
-          label="Email"
-          component={LoginInput}
-          validate={[isValidEmail, isRequired]}
-        />
+        <Field name="email" type="text" label="Email" component={LoginInput} validate={[isValidEmail, isRequired]} />
         <label className={styles.loginDetail}>Password</label>
-        <Field
-          name="password"
-          type="text"
-          label="Password"
-          component={LoginInput}
-          validate={[isRequired, hasLength]}
-        />
+        <Field name="password" type="text" label="Password" component={LoginInput} validate={[isRequired, hasLength]} />
         <button type="submit" className={styles.loginSubmitButton}>
           Submit
         </button>

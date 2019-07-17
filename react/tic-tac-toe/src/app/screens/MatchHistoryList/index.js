@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Spinner from 'react-spinkit';
 
-import MatchesService from '../../../../../services/matchesService';
-import actionsCreators from '../../../../../redux/tictactoe/actions';
-import { parseMatchesResponse } from '../../../../../utils/mappers';
+import MatchesService from '../../../services/matchesService';
+import actionsCreators from '../../../redux/tictactoe/actions';
+import { parseMatchesResponse } from '../../../utils/mappers';
 
 import styles from './styles.module.scss';
 import MatchHistoryHeader from './components/MatchHistoryHeader';

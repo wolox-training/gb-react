@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import styles from './styles.module.scss';
 import Board from './components/Board';
 import HistoryList from './components/HistoryList';
-import MatchHistoryList from './components/MatchHistoryList';
 import calculateWinner from './utils';
 
 class Game extends Component {
@@ -62,7 +61,6 @@ class Game extends Component {
           <span>{status}</span>
           <HistoryList history={history} onChangeHistory={this.handleJumpTo} />
         </div>
-        <MatchHistoryList />
       </div>
     );
   }
