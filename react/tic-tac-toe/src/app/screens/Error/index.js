@@ -1,11 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Error extends Component {
-  handleError = () => 1;
-
-  render() {
-    return <p>Incorrect URL</p>;
-  }
+function Error () {
+  return <p>Incorrect URL</p>;
 }
 
 export default Error;
