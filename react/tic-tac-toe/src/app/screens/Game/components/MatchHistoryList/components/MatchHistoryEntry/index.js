@@ -6,13 +6,13 @@ import styles from './styles.module.scss';
 function MatchHistoryEntry({ matchEntry }) {
   return (
     <div className={styles.matchEntryContainer}>
-      <span className={styles.matchEntry}>
+      <span className={`${styles.row} ${styles.matchEntry}`}>
         {matchEntry && matchEntry.firstPlayer}
       </span>
-      <span className={styles.matchEntry}>
+      <span className={`${styles.row} ${styles.matchEntry}`}>
         {matchEntry && matchEntry.secondPlayer}
       </span>
-      <span className={styles.matchEntry}>
+      <span className={`${styles.row} ${styles.matchEntry}`}>
         {matchEntry && matchEntry.winner}
       </span>
     </div>

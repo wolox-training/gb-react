@@ -7,8 +7,11 @@
 .match-entry-container {
   border: 2px solid black;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   margin-bottom: 5px;
-  padding: 5px 5px 5px;
+  padding: 5px;
+}
+
+.row {
+  flex-direction: row;
 }
