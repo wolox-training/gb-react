@@ -2,15 +2,16 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
 
+import { hasLength, isRequired, isValidEmail } from '../../../utils/Validations';
+
 import styles from './styles.module.scss';
 import LoginInput from './components/LoginInput';
-import { hasLength, isRequired, isValidEmail } from './Validations';
 
 function Login({ handleSubmit }) {
   return (
-    <div className={styles.loginContainer}>
+    <div className={`${styles.column} ${styles.middle}`}>
       <h1 className={styles.loginTitle}>Login</h1>
-      <form className={styles.loginForm} onSubmit={handleSubmit}>
+      <form className={`${styles.column} ${styles.middle}`} onSubmit={handleSubmit}>
         <label className={styles.loginDetail}>Email</label>
         <Field
           name="email"
