@@ -17,7 +17,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Login} />
           <Route exact path="/game" component={Game} />
-          <Route exact component={Error} />
+          <Route component={Error} />
         </Switch>
       </Router>
     </Provider>
