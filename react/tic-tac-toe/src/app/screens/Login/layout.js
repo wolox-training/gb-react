@@ -1,5 +1,5 @@
 import React from 'react';
-import { Field, reduxForm } from 'redux-form';
+import { Field, Form, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
 
 import { hasLength, isRequired, isValidEmail } from '../../../utils/Validations';
@@ -11,7 +11,7 @@ function Login({ handleSubmit }) {
   return (
     <div className={`${styles.column} ${styles.middle}`}>
       <h1 className={styles.loginTitle}>Login</h1>
-      <form className={`${styles.column} ${styles.middle}`} onSubmit={handleSubmit}>
+      <Form className={`${styles.column} ${styles.middle}`} onSubmit={handleSubmit}>
         <label className={styles.loginDetail}>Email</label>
         <Field
           name="email"
@@ -31,7 +31,7 @@ function Login({ handleSubmit }) {
         <button type="submit" className={styles.loginSubmitButton}>
           Submit
         </button>
-      </form>
+      </Form>
     </div>
   );
 }
