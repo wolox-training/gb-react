@@ -1,3 +1,7 @@
+import matchesService from '../../services/matchesService';
+import { parseMatchesResponse } from '../../utils/mappers';
+
+
 export const actions = {
   GET_HISTORIC_SUCCESS: '@@TICTACTOE/GET_HISTORIC_SUCCESS',
   GET_HISTORIC_LOADING: '@@TICTACTOE/GET_HISTORIC_LOADING',
@@ -13,9 +17,16 @@ const actionsCreators = {
     type: actions.GET_HISTORIC_ERROR,
     payload: error
   }),
-  getHistoricLoading: () => ({
-    type: actions.GET_HISTORIC_LOADING
-  })
+  getHistoricLoading: () => dispatch => {
+    const response = matchesService.getHistoric();
+    if (response.ok) {
+      const { data } = response;
+      const parsedResponse = data.map(parseMatchesResponse);
+      dispatch(actionsCreators.getHistoric(parsedResponse));
+    } else {
+      dispatch(actionsCreators.getHistoricError(response.error));
+    }
+  }
 };
 
 export default actionsCreators;

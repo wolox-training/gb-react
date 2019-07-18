@@ -18,8 +18,7 @@ function App() {
           <Route component={Error} />
         </Switch>
       </Router>
-    </Provider>
-  );
+    </Provider>);
 }
 
 export default App;
