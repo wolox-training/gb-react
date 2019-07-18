@@ -4,7 +4,7 @@ import styles from './styles.module.scss';
 
 function LoginInput({ input, type, meta: { error, submitFailed } }) {
   return (
-    <div>
+    <div className="column">
       <input
         {...input}
         type={type}
