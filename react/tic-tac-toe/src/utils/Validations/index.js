@@ -9,12 +9,12 @@ const hasLength = value =>
 const isValidEmail = value =>
   VALID_EMAIL.test(value) ? undefined : 'Domain needs to be @wolox.com';
 
-export const validateEmail = value => [
-  isRequired(value),
-  isValidEmail(value)
+export const validateEmail = [
+  isRequired,
+  isValidEmail
 ];
 
-export const validatePassword = value => [
-  isRequired(value),
-  hasLength(value)
+export const validatePassword = [
+  isRequired,
+  hasLength
 ];
