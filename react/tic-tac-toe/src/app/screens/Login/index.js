@@ -16,8 +16,8 @@ class LoginContainer extends Component {
   };
 
   render() {
-    const { token } = this.props;
-    if (token) {
+    const { isLoggedIn } = this.props;
+    if (isLoggedIn) {
       return <Redirect to="/game" />;
     }
     return <Login onSubmit={this.handleSubmit} />;
@@ -26,11 +26,11 @@ class LoginContainer extends Component {
 
 LoginContainer.propTypes = {
   login: PropTypes.func.isRequired,
-  token: PropTypes.string
+  isLoggedIn: PropTypes.string
 };
 
 const mapStateToProps = state => ({
-  token: state.usersReducer.token
+  isLoggedIn: state.usersReducer.token
 });
 
 const mapDispatchToProps = dispatch => ({
