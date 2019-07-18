@@ -4,9 +4,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import store from '../redux/store';
 
-import AuthenticatedRoutes from './components/AuthenticatedRoutes';
+import Routes from './components/Routes';
 import Error from './screens/Error';
-import Login from './screens/Login';
 
 import '../scss/application.scss';
 
@@ -15,8 +14,7 @@ function App() {
     <Provider store={store}>
       <Router>
         <Switch>
-          <Route exact path="/" component={Login} />
-          <AuthenticatedRoutes />
+          <Routes />
           <Route component={Error} />
         </Switch>
       </Router>
