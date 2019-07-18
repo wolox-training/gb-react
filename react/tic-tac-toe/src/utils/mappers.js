@@ -1,8 +1,11 @@
+import { TIE, PLAYER_ONE } from '../constants';
+
+
 const getWinner = matchResult => {
-  if (matchResult.winner === 'tie') {
+  if (matchResult.winner === TIE) {
     return matchResult.winner;
   }
-  return matchResult.winner === 'player_one' ? matchResult.player_one : matchResult.player_two;
+  return matchResult.winner === PLAYER_ONE ? matchResult.player_one : matchResult.player_two;
 };
 
 export const parseMatchesResponse = raw => {
