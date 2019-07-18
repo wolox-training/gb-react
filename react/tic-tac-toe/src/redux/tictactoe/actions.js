@@ -1,7 +1,6 @@
 import matchesService from '../../services/matchesService';
 import { parseMatchesResponse } from '../../utils/mappers';
 
-
 export const actions = {
   GET_HISTORIC_SUCCESS: '@@TICTACTOE/GET_HISTORIC_SUCCESS',
   GET_HISTORIC_LOADING: '@@TICTACTOE/GET_HISTORIC_LOADING',

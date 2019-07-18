@@ -1,4 +1,4 @@
 import Login from '../../../screens/Login';
 import { LOGIN_ROUTE } from '../../../../constants/routes';
 
-export const publicRoutes = [{ path: LOGIN_ROUTE, component: Login }];
+export const publicRoutes = { LOGIN: { path: LOGIN_ROUTE, component: Login } };

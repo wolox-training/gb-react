@@ -7,15 +7,12 @@ class Square extends Component {
   handleClick = () => {
     const { onClick, index } = this.props;
     onClick(index);
-  }
+  };
 
   render() {
     const { value } = this.props;
     return (
-      <button
-        type="button"
-        className={styles.square} onClick={this.handleClick}
-      >
+      <button type="button" className={styles.square} onClick={this.handleClick}>
         {value}
       </button>
     );

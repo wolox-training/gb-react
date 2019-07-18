@@ -10,7 +10,7 @@ class LoginContainer extends Component {
   handleSubmit = ({ email, password }) => this.props.login({ email, password });
 
   render() {
-    return (<Login onSubmit={this.handleSubmit} />);
+    return <Login onSubmit={this.handleSubmit} />;
   }
 }
 
@@ -22,4 +22,7 @@ const mapDispatchToProps = dispatch => ({
   login: userData => dispatch(actionsCreators.login(userData))
 });
 
-export default connect(null, mapDispatchToProps)(LoginContainer);
+export default connect(
+  null,
+  mapDispatchToProps
+)(LoginContainer);

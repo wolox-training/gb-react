@@ -1,6 +1,5 @@
 import { TIE, PLAYER_ONE } from '../constants';
 
-
 const getWinner = matchResult => {
   if (matchResult.winner === TIE) {
     return matchResult.winner;

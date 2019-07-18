@@ -5,7 +5,7 @@ class HistoryMove extends Component {
   handleOnClick = () => {
     const { onChangeHistory, moveNumber } = this.props;
     onChangeHistory(moveNumber);
-  }
+  };
 
   render() {
     const { moveNumber } = this.props;

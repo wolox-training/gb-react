@@ -9,12 +9,8 @@ function SquareList({ boardRow, squares, onClick }) {
   return (
     <div className={styles.boardRow}>
       {boardRow.map(index => (
-        <Square
-          key={index}
-          value={squares[index]}
-          onClick={onClick}
-          index={index}
-        />))}
+        <Square key={index} value={squares[index]} onClick={onClick} index={index} />
+      ))}
     </div>
   );
 }

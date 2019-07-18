@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Error () {
+function Error() {
   return <p>Incorrect URL</p>;
 }
 

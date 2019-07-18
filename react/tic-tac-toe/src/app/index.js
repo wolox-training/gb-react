@@ -1,24 +1,33 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router';
+import { ConnectedRouter } from 'connected-react-router';
 
-import store from '../redux/store';
+import store, { history } from '../redux/store';
 
-import Routes from './components/Routes';
+import AuthenticatedRoute from './components/AuthenticatedRoute';
 import Error from './screens/Error';
-
 import '../scss/application.scss';
+import { privateRoutes } from './components/AuthenticatedRoute/constants/privateRoutes';
+import { publicRoutes } from './components/AuthenticatedRoute/constants/publicRoutes';
 
 function App() {
   return (
     <Provider store={store}>
-      <Router>
+      <ConnectedRouter history={history}>
         <Switch>
-          <Routes />
+          <AuthenticatedRoute exact component={privateRoutes.GAME.component} path={privateRoutes.GAME.path} />
+          <AuthenticatedRoute
+            exact
+            component={privateRoutes.RECORDS.component}
+            path={privateRoutes.RECORDS.path}
+          />
+          <Route exact component={publicRoutes.LOGIN.component} path={publicRoutes.LOGIN.path} />
           <Route component={Error} />
         </Switch>
-      </Router>
-    </Provider>);
+      </ConnectedRouter>
+    </Provider>
+  );
 }
 
 export default App;
