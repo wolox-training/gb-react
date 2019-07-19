@@ -7,23 +7,32 @@ export const actions = {
   GET_HISTORIC_ERROR: '@@TICTACTOE/GET_HISTORIC_ERROR'
 };
 
-const actionsCreators = {
-  getHistoric: data => ({
+const privateActionCreators = {
+  getHistoricSuccess: data => ({
     type: actions.GET_HISTORIC_SUCCESS,
     payload: data
   }),
-  getHistoricError: error => ({
+  getHistoricLoading: loading => ({
+    type: actions.GET_HISTORIC_LOADING,
+    payload: loading
+  }),
+  getHistoricFailure: error => ({
     type: actions.GET_HISTORIC_ERROR,
     payload: error
-  }),
-  getHistoricLoading: () => dispatch => {
-    const response = matchesService.getHistoric();
+  })
+};
+
+const actionsCreators = {
+  getHistoric: () => async dispatch => {
+    dispatch(privateActionCreators.getHistoricLoading(true));
+    const response = await matchesService.getHistoric();
+
     if (response.ok) {
       const { data } = response;
       const parsedResponse = data.map(parseMatchesResponse);
-      dispatch(actionsCreators.getHistoric(parsedResponse));
+      dispatch(privateActionCreators.getHistoricSuccess(parsedResponse));
     } else {
-      dispatch(actionsCreators.getHistoricError(response.error));
+      dispatch(privateActionCreators.getHistoricError(response.error));
     }
   }
 };

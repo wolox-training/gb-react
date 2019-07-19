@@ -1,35 +1,24 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Spinner from 'react-spinkit';
 
-import actionsCreators from '../../../redux/tictactoe/actions';
+import actionsCreators from '../../../../../redux/tictactoe/actions';
 
-import styles from './styles.module.scss';
-import MatchHistoryHeader from './components/MatchHistoryHeader';
-import MatchHistoryEntry from './components/MatchHistoryEntry';
+import MatchHistoryList from './layout';
 
-class MatchHistoryList extends Component {
+class MatchHistoryListContainer extends Component {
   componentDidMount() {
     this.props.getHistoric();
   }
 
   render() {
     const { historicEntries, loading } = this.props;
-    return loading ? (
-      <Spinner name="circle" />
-    ) : (
-      <div className={`${styles.column} ${styles.matchContainer}`}>
-        <MatchHistoryHeader />
-        {historicEntries.map(matchEntry => (
-          <MatchHistoryEntry key={matchEntry.date} matchEntry={matchEntry} />
-        ))}
-      </div>
-    );
+
+    return <MatchHistoryList loading={loading} historicEntries={historicEntries} />;
   }
 }
 
-MatchHistoryList.propTypes = {
+MatchHistoryListContainer.propTypes = {
   getHistoric: PropTypes.func.isRequired,
   historicEntries: PropTypes.arrayOf(
     PropTypes.shape({
@@ -47,10 +36,10 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  getHistoric: () => dispatch(actionsCreators.getHistoricLoading())
+  getHistoric: () => dispatch(actionsCreators.getHistoric())
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(MatchHistoryList);
+)(MatchHistoryListContainer);

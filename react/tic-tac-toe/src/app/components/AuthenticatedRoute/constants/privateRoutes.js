@@ -1,4 +1,4 @@
-import MatchHistoryList from '../../../screens/MatchHistoryList';
+import MatchHistoryList from '../../../screens/MatchRecords/components/MatchHistoryList';
 import Game from '../../../screens/Game';
 import { GAME_ROUTE, RECORDS_ROUTE } from '../../../../constants/routes';
 
