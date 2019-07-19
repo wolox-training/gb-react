@@ -1,7 +1,7 @@
 import { actions } from './actions';
 
 const initialState = {
-  token: window.localStorage.getItem('token')
+  token: localStorage.getItem('token')
 };
 
 function reducer(state = initialState, action) {

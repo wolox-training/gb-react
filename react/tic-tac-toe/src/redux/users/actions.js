@@ -13,7 +13,7 @@ const actionsCreators = {
   login: userData => async dispatch => {
     const response = await usersService.userLogin(userData);
     if (response.ok) {
-      window.localStorage.setItem('token', response.data);
+      localStorage.setItem('token', response.data);
       dispatch({ type: actions.LOGIN_SUCCESS, payload: response.data });
       dispatch(push(GAME_ROUTE));
     } else {
